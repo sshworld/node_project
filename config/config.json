@@ -1,0 +1,20 @@
+{
+    "Kim" : {
+        "host" : "localhost",
+        "user" : "root",
+        "password" : "",
+        "database" : ""
+    },
+    "Song" : {
+        "host" : "localhost",
+        "user" : "root",
+        "password" : "",
+        "database" : ""
+    },
+    "Choi" : {
+        "host" : "localhost",
+        "user" : "root",
+        "password" : "",
+        "database" : ""
+    }
+}
