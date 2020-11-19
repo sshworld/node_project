@@ -34,7 +34,19 @@ body {
   width: 100%;
   top: 0;
   transition: background 0.5s;
-  background-color: #262626;
+  background-color: #fff;
+}
+
+
+#menu-area .logo a {
+  text-decoration: none;
+}
+
+#menu-area .logo h2 {
+  display: inline-block;
+  color: #262626;
+  align-items: center;
+  justify-content: space-around;
 }
 
 #menu-area .logo img {
@@ -58,7 +70,8 @@ body {
 
 #menu-area ul li a {
   text-decoration: none;
-  color : #fff;
+  color : #262626;
+  border-radius: 50px;
 }
 
 .banner-area {
@@ -94,4 +107,22 @@ body {
 
 .wrapper {
   padding: 70px;
+}
+
+#menu-area.cus-nav, #menu-area:hover {
+  background: #262626;
+  z-index: 999;
+}
+
+#menu-area.cus-nav a, #menu-area:hover a {
+  color: #fff;
+}
+
+#menu-area.cus-nav .logo img, #menu-area:hover .logo img {
+  height: 65px;
+}
+
+#menu-area.cus-nav .logo h2, #menu-area:hover .logo h2 {
+  color: #fff;
+  font-size: 20px;
 }
