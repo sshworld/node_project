@@ -1,0 +1,34 @@
+.banner-area {
+    background: url(/images/tomato.jpg);
+    -webkit-background-size : cover;
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+  }
+  
+  .banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .banner-text h2 {
+    font-family: big john;
+    font-size : 60px
+  }
+  
+  .banner-text a {
+    text-decoration: none;
+    background: #262626;
+    color: #fff;
+    padding: 15px 30px;
+    display: inline-block;
+    margin-top: 20px;
+    border-radius: 50px;
+  }
+  
+  .wrapper {
+    padding: 70px;
+  }
