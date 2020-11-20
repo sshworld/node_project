@@ -78,4 +78,5 @@ input:valid + label {
     border-radius: 5px;
     padding-left: 8px;
     color: #262626;
+    cursor: pointer;
 }
