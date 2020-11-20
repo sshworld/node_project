@@ -2,7 +2,7 @@
   margin: 0px;
   padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+} */
 
 a {
   color: #000000; text-decoration: none;
@@ -10,7 +10,7 @@ a {
 
 a:hover a:active a:target {
   text-decoration: none;
-} */
+}
 
 * {
   margin: 0;
@@ -22,7 +22,4 @@ body {
   font-family: poppins;
 }
 
-.container {
-  border-radius: 50px;
-}
 
