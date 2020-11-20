@@ -72,7 +72,7 @@
 }
 
 .card-text .date {
-  color: rgb(255, 7, 110);
+  color: orangered;
   font-size: 13px;
 }
 
@@ -94,7 +94,7 @@
   grid-template-rows: 1fr;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  background: rgb(255, 7, 110);
+  background: orangered;
 }
 
 .card-stats .stat {
@@ -118,8 +118,8 @@
 }
 
 .card-stats .border {
-  border-left: 1px solid rgb(172, 26, 87);
-  border-right: 1px solid rgb(172, 26, 87);
+  border-left: 1px solid #262626;
+  border-right: 1px solid #262626;
 }
 
 .card-stats .value sup {
