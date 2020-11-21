@@ -2,7 +2,7 @@
     outline: 0;
 }
 
-body {
+.container {
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
@@ -12,6 +12,8 @@ body {
     justify-content: center;
     height: 100vh;
     background-color: #262626;
+    position: relative;
+    flex-direction: column;
 }
 
 #menu-area {
@@ -24,6 +26,10 @@ body {
 
 #menu-area ul li a {
     color: #fff;
+}
+
+#menuicon + label span {
+    background-color: #fff;
 }
 
 .wrapper {
@@ -43,7 +49,7 @@ body {
     color: #fff;
 }
 
-label {
+.wrapper label {
     position: absolute;
     top: 50%;
     left: 15px;
@@ -55,8 +61,8 @@ label {
     font-family: poppins;
 }
 
-input:focus + label,
-input:valid + label {
+.wrapper input:focus + label,
+.wrapper input:valid + label {
     font-size: 15px;
     top: 0;
     background-color: #262626;
