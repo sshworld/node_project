@@ -2,7 +2,7 @@
   margin: 0px;
   padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+} */
 
 a {
   color: #000000; text-decoration: none;
@@ -10,7 +10,7 @@ a {
 
 a:hover a:active a:target {
   text-decoration: none;
-} */
+}
 
 * {
   margin: 0;
@@ -22,107 +22,4 @@ body {
   font-family: poppins;
 }
 
-#menu-area {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display : flex;
-  justify-content: space-between;
-  padding: 0 60px;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  transition: background 0.5s;
-  background-color: #fff;
-}
 
-
-#menu-area .logo a {
-  text-decoration: none;
-}
-
-#menu-area .logo h2 {
-  display: inline-block;
-  color: #262626;
-  align-items: center;
-  justify-content: space-around;
-}
-
-#menu-area .logo img {
-  height: 70px;
-  transition: height 0.5s;
-  padding-top: 10px;
-}
-
-#menu-area ul {
-  width: 500px;
-  justify-content: space-around;
-  list-style: none;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display : flex;
-  align-items: center;
-  
-}
-
-#menu-area ul li a {
-  text-decoration: none;
-  color : #262626;
-  border-radius: 50px;
-}
-
-.banner-area {
-  background: url(/images/tomato.jpg);
-  -webkit-background-size : cover;
-  background-size: cover;
-  background-position: center center;
-  height: 100vh;
-}
-
-.banner-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.banner-text h2 {
-  font-family: big john;
-  font-size : 60px
-}
-
-.banner-text a {
-  text-decoration: none;
-  background: #262626;
-  color: #fff;
-  padding: 15px 30px;
-  display: inline-block;
-  margin-top: 20px;
-  border-radius: 50px;
-}
-
-.wrapper {
-  padding: 70px;
-}
-
-#menu-area.cus-nav, #menu-area:hover {
-  background: #262626;
-  z-index: 999;
-}
-
-#menu-area.cus-nav a, #menu-area:hover a {
-  color: #fff;
-}
-
-#menu-area.cus-nav .logo img, #menu-area:hover .logo img {
-  height: 65px;
-}
-
-#menu-area.cus-nav .logo h2, #menu-area:hover .logo h2 {
-  color: #fff;
-  font-size: 20px;
-}

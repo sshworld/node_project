@@ -13,20 +13,32 @@
     </div>
 </nav> -->
 
+<script type="text/javascript" src="/javascripts/main.js"></script>
+<script type="text/javascript" src="/javascripts/menu.js"></script>
+
 <div id="menu-area">
     <div class="logo">
         <a href="#">
             <img src="/images/tomato.png" alt="">
-        
+
             <h2>RECIPE</h2>
         </a>
     </div>
 
+    <input type="checkbox" id="menuicon" onclick="visi()">
+    <label for="menuicon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+</div>
+
+<div class="menu" id="menu">
     <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Recipe</a></li>
-        <li><a href="#">services</a></li>
-        <li><a href="#">contact</a></li>
+        <li data-text="Home"><a href="#">Home</a></li>
+        <li data-text="About"><a href="#">About</a></li>
+        <li data-text="Serviecs"><a href="">Services</a></li>
+        <li data-text="Team"><a href="">Team</a></li>
+        <li data-text="Contact"><a href="">Contact</a></li>
     </ul>
 </div>

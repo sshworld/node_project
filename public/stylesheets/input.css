@@ -1,0 +1,88 @@
+* {
+    outline: 0;
+}
+
+.container {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display : flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #262626;
+    position: relative;
+    flex-direction: column;
+}
+
+#menu-area {
+    background-color: #262626;
+}
+
+#menu-area .logo h2 {
+    color: #fff;
+}
+
+#menu-area ul li a {
+    color: #fff;
+}
+
+#menuicon + label span {
+    background-color: #fff;
+}
+
+.wrapper {
+    width: 500px;
+    height: 70px;
+    position: relative;
+    margin-top: 20px;
+}
+
+.wrapper input {
+    background-color: #262626;
+    width: 100%;
+    height: 100%;
+    border: 3px solid white;
+    border-radius: 5px;
+    padding-left: 8px;
+    color: #fff;
+}
+
+.wrapper label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    transition: all .8s ease;
+    font-size: 20px;
+    pointer-events: none;
+    color: #fff;
+    font-family: poppins;
+}
+
+.wrapper input:focus + label,
+.wrapper input:valid + label {
+    font-size: 15px;
+    top: 0;
+    background-color: #262626;
+    padding: 5px;
+}
+
+.btn {
+    width: 500px;
+    height: 70px;
+    position: relative;
+    margin-top: 20px;
+}
+
+.btn input {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    border: 3px solid #262626;
+    border-radius: 5px;
+    padding-left: 8px;
+    color: #262626;
+    cursor: pointer;
+}
