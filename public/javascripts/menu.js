@@ -1,14 +1,14 @@
 
 
 function visi() {
-    let menuicon = document.getElementById('menuicon');
-    let menu = document.getElementById('menu');
-    
-    if (menuicon.checked == true) {
-        menu.visiblity = visible;
-        alert("df")
+    let menuicon = document.getElementById('menuicon').checked;
+    console.log(menu)
+
+    if (menuicon) {
+        document.getElementById('menu').style.display = 'flex'
+        
     } else {
-        menu.visiblity = hidden;
-        alert("ddf")
+        document.getElementById('menu').style.display = 'none'
+        
     }
 }
