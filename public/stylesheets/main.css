@@ -3,8 +3,13 @@
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 10%;
   overflow: hidden;
+}
+
+h1 {
+  margin: 5%;
 }
 
 .card {
@@ -18,17 +23,13 @@
   box-shadow: 5px 5px 15px;
   text-align: center;
   color: #fff;
-
+  position: relative;
   transition: 0.5s ease;
   cursor: pointer;
 }
 
 .card-image {
-  grid-area: image;
-  background: url("/images/tomato.png");
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  background-size: cover;
+  
 }
 
 .card-text {
