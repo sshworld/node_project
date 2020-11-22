@@ -14,7 +14,7 @@
     "Choi" : {
         "host" : "localhost",
         "user" : "root",
-        "password" : "",
-        "database" : ""
+        "password" : "Gudans29810!",
+        "database" : "mydb"
     }
 }
