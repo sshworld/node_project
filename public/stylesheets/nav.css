@@ -72,6 +72,77 @@
   font-size: 20px;
 }
 
+/* ------------------------ nav -------------------------------*/
+#nav {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-color: #262626;
+  font-size: 0;
+}
+
+#nav a {
+  font-size: 15px;
+  color: #fff;
+  text-decoration: none;
+  line-height: 50px;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  text-align: center;
+  transition: all .5s ease 0s;
+  background-color: orangered;
+  
+}
+
+/* #nav .animation {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  z-index: 0;
+  background: orangered;
+  border-radius: 8px;
+} */
+
+#nav a:nth-child(1) {
+  width: 200px
+}
+
+#nav .start-home, #nav a:nth-child(1):hover + #nav a:nth-child(1) {
+  
+}
+
+#nav a:nth-child(2) {
+  width: 200px
+}
+
+#nav .start-home, #nav a:nth-child(2):hover {
+  
+}
+
+#nav a:nth-child(3) {
+  width: 200px
+}
+
+#nav .start-home, #nav a:nth-child(3):hover {
+  
+}
+
+#nav a:nth-child(4) {
+  width: 200px
+}
+
+#nav .start-home, #nav a:nth-child(4):hover {
+
+}
+
+#nav a:nth-child(5) {
+  width: 200px
+}
+
+#nav .start-home, #nav a:nth-child(5):hover {
+  
+}
 /*-----------------------------메뉴 ------------------------- */
 
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap');
@@ -81,7 +152,7 @@
   display: -moz-flex;
   display: -ms-flex;
   display: -o-flex;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -90,6 +161,10 @@
   overflow: hidden;
   padding: 0 60px;
   font-family: 'Poppins', sans-serif;
+}
+
+#menuicon:checked ~ .menu {
+  display: flex;
 }
 
 .menu ul {
