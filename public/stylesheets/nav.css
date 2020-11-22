@@ -90,58 +90,26 @@
   z-index: 1;
   display: inline-block;
   text-align: center;
+  width: 200px;
   transition: all .5s ease 0s;
-  background-color: orangered;
-  
 }
 
-/* #nav .animation {
-  position: absolute;
-  height: 100%;
-  top: 0;
-  z-index: 0;
+.line {
+  width: 200px;
+  height: 50px;
+  background: orangered;
+}
+
+/* #nav a:hover {
   background: orangered;
   border-radius: 8px;
 } */
 
-#nav a:nth-child(1) {
-  width: 200px
-}
+/* https://www.youtube.com/watch?v=Ap3GPr5jNVY */
 
-#nav .start-home, #nav a:nth-child(1):hover + #nav a:nth-child(1) {
-  
-}
-
-#nav a:nth-child(2) {
-  width: 200px
-}
-
-#nav .start-home, #nav a:nth-child(2):hover {
-  
-}
-
-#nav a:nth-child(3) {
-  width: 200px
-}
-
-#nav .start-home, #nav a:nth-child(3):hover {
-  
-}
-
-#nav a:nth-child(4) {
-  width: 200px
-}
-
-#nav .start-home, #nav a:nth-child(4):hover {
-
-}
-
-#nav a:nth-child(5) {
-  width: 200px
-}
-
-#nav .start-home, #nav a:nth-child(5):hover {
-  
+.start-home, #nav li a:nth-child(1) ~ .line {
+  background: orangered;
+  border-radius: 8px;
 }
 /*-----------------------------메뉴 ------------------------- */
 
