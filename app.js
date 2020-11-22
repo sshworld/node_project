@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-//var index = require('./routes/index');
+var index = require('./routes/index');
 
 // 세션
 const session = require('express-session');
@@ -19,8 +19,6 @@ const options = {
 }
 
 const sessionStore = new mysqlStore(options);
-
-const Route = require('./routes');
 
 var app = express();
 
@@ -45,11 +43,7 @@ app.use(session({
 }));
 
 
-//app.use('/', index);
-
-Route.forEach(route=>{
-  app.use(route['path'], route['controller']);
-})
+app.use('/', index);
 
 
 // catch 404 and forward to error handler

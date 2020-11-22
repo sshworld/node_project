@@ -13,11 +13,8 @@ class userController {
             res.send('')
         }
 
-        req.session.userId = userInfo[0].userId
 
         const mainObj = {
-            userId = req.session.userId,
-            bestRecipe3 = bestRecipe,
             
         }
 

@@ -1,4 +1,4 @@
-const pool = require("../../config/dbconfig")
+const db = require("../middleware/db")
 
 class mainController {
     

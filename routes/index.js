@@ -1,11 +1,12 @@
 const express = require('express');
 
-const userRoute = require('./users')
 const mainRoute = require('./main')
+const userRoute = require('./user')
 
 const router = express.Router();
 
+router.use("/", mainRoute)
 router.use("/user", userRoute)
-router.use("/main", mainRoute)
+
 
 module.exports = router;
