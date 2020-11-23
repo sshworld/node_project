@@ -1,18 +1,16 @@
 <link rel="stylesheet" href="/stylesheets/main.css">
 
-
-<div class="banner-area">
-    <div class="banner-text">
-        <h2>RECIPE</h2>
-        <a href="#">Learn More</a>
-    </div>
-</div>
-
+<h1>추천 레시피</h1>
 <div class="container">
 
+    
+    <% for(var i = 0; i < 3; i++) { %>
     <div class="card">
-        <div class="card-image">
-
+        <div class="card-image" style="grid-area: image;
+        background: url('/images/tomato.png');
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        background-size: cover;">
         </div>
 
         <div class="card-text">
@@ -36,5 +34,11 @@
             </div>
         </div>
     </div>
+    <% } %>
+    
 
+</div>
+
+<div class="start-home">
+        
 </div>

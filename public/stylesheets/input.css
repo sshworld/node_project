@@ -86,3 +86,7 @@
     color: #262626;
     cursor: pointer;
 }
+
+#nav {
+    display: none;
+}

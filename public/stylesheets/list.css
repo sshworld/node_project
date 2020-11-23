@@ -1,0 +1,22 @@
+
+h1 {
+  margin: 5%;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10%;
+    overflow: hidden;
+    border-width: 2px;
+    border-color: #fff;
+    border-top-color: #262626;
+    border-style: solid;
+  }
+
+
+  /* https://www.youtube.com/watch?v=5QB9agsk42Q */
+  

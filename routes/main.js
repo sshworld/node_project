@@ -8,11 +8,17 @@ router.get('/', (req, res) => {
   res.render('index.ejs', {pages: './main.ejs'})
 })
 
+
+router.get('/list', (req, res) => {
+  res.render('index.ejs', {pages: './list.ejs'})
+})
+
 // router.post('/', (req, res, next) => {
 //   req.session.recipe_name = req.body.session;
 //   console.log(req.session.recipe_name);
 //   res.redirect('/');
 // })
+
 
 
 module.exports = router;

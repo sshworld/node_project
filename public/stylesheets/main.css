@@ -1,45 +1,19 @@
-.banner-area {
-  background: url(/images/tomato.jpg);
-  -webkit-background-size: cover;
-  background-size: cover;
-  background-position: center center;
-  height: 100vh;
-}
-
-.banner-text {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.banner-text h2 {
-  font-family: big john;
-  font-size: 60px
-}
-
-.banner-text a {
-  text-decoration: none;
-  background: #262626;
-  color: #fff;
-  padding: 15px 30px;
-  display: inline-block;
-  margin-top: 20px;
-  border-radius: 50px;
-}
-
-.wrapper {
-  padding: 70px;
-}
-
 .container {
   width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 10%;
   overflow: hidden;
+  border-width: 2px;
+  border-color: #fff;
+  border-top-color: #262626;
+  border-style: solid;
+}
+
+h1 {
+  margin: 5%;
 }
 
 .card {
@@ -53,18 +27,12 @@
   box-shadow: 5px 5px 15px;
   text-align: center;
   color: #fff;
-
+  position: relative;
   transition: 0.5s ease;
   cursor: pointer;
 }
 
-.card-image {
-  grid-area: image;
-  background: url("/images/tomato.png");
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  background-size: cover;
-}
+.card-image {}
 
 .card-text {
   grid-area: text;
