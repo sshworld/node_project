@@ -6,6 +6,10 @@
   justify-content: space-between;
   padding: 10%;
   overflow: hidden;
+  border-width: 2px;
+  border-color: #fff;
+  border-top-color: #262626;
+  border-style: solid;
 }
 
 h1 {
@@ -28,9 +32,7 @@ h1 {
   cursor: pointer;
 }
 
-.card-image {
-  
-}
+.card-image {}
 
 .card-text {
   grid-area: text;

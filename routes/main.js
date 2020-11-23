@@ -8,5 +8,9 @@ router.get('/', (req, res) => {
   res.render('index.ejs', {pages: './main.ejs'})
 })
 
+router.get('/list', (req, res) => {
+  res.render('index.ejs', {pages: './list.ejs'})
+})
+
 
 module.exports = router;

@@ -293,3 +293,17 @@
   bottom: 50%;
   transform: translateY(50%) rotate(-45deg);
 }
+
+/* 검색창 */
+
+.search {
+  max-width: 450px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.search .search-input {
+  background: #fff;
+}
