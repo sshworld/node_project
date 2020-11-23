@@ -13,8 +13,27 @@ class mainController {
         }
 
         req.body.Info = Info;
+
+        next();
     }
     
+
+    async selectList (req, res, next){
+        const selectList = await db(`SELECT * FROM category as c, recipe as r WHERE c.category_num = r.category_num`)
+
+        req.body.listInfo = selectList
+
+        next();
+    }
+
+    
+    async selectListDetail (req, res, next) {
+        const detail = await db(`SELECT * FROM category as c, recipe as r WHERE c.category_num = r.category_num AND r.category_num = "${req.params.category_num}"`)
+
+        req.body.detail = detail
+
+        next();
+    }
 }
   
 module.exports = mainController;
