@@ -1,7 +1,30 @@
 <link rel="stylesheet" href="/stylesheets/list.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 <h1>분류</h1>
 
 <div class="container">
-    
+    <% for(var i = 0; i < 7; i++) { %>
+        <div class="card">
+            <a href="#"><img src="/images/tomato.png" alt="" class="card-image"></a>
+
+            <div class="card-content">
+                <p>title</p>
+                <p>
+                    <a href="#">
+                        chef name
+                    </a>
+                </p>
+            </div>
+
+            <div class="card-info">
+                <div>
+                    <i class="material-icons">thumb_up</i>310
+                </div>
+                <div>
+                    <a href="#" class="card-link">View Article</a>
+                </div>
+            </div>
+        </div>
+    <% } %>
 </div>

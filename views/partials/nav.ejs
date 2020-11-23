@@ -1,11 +1,10 @@
-
 <script type="text/javascript" src="/javascripts/main.js"></script>
 <script type="text/javascript" src="/javascripts/menu.js"></script>
 
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 <div id="menu-area">
-    <div class="logo">
+    <div class="logo" id="logo">
         <a href="#">
             <img src="/images/tomato.png" alt="">
 
@@ -13,15 +12,23 @@
         </a>
     </div>
 
-    <div class="search">
-        <div class="search-input">
-            <input type="text" placeholder="Type to search...">
-            <div class="autocom-box">
+    <form action="">
+        <div class="search" id="search">
+            <div class="search-input">
+                <input type="text" placeholder="Type to search...">
+                <!-- <div class="autocom-box">
                 <li>hambergur</li>
+                <li>hambergur</li>
+                <li>hambergur</li>
+                <li>hambergur</li>
+                <li>hambergur</li>
+                <li>hambergur</li>
+                
+            </div> -->
+                <button type="submit" class="icon"><i class="fas fa-search"></i></button>
             </div>
-            <div class="icon"><i class="fas fa-search"></i></div>
         </div>
-    </div>
+    </form>
 
     <input type="checkbox" id="menuicon" onclick="visi()">
     <label for="menuicon">
