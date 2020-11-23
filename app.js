@@ -6,19 +6,19 @@ var logger = require('morgan');
 
 var index = require('./routes/index');
 
-// // 세션
-// const session = require('express-session');
-// const mysqlStore = require("express-mysql-session")(session)
+// 세션
+const session = require('express-session');
+const mysqlStore = require("express-mysql-session")(session)
 
-// const options = {
-//   host: 'localhost',
-//     port: 3306,
-//     user: 'root',
-//     password: 'Gudans29810!',
-//     database: 'mydb'
-// }
+const options = {
+  host: 'localhost',
+    port: 3306,
+    user: 'root',
+    password: 'Gudans29810!',
+    database: 'mydb'
+}
 
-// const sessionStore = new mysqlStore(options);
+const sessionStore = new mysqlStore(options);
 
 var app = express();
 
@@ -34,13 +34,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// // 세션
-// app.use(session({
-//   secret: 'session!',
-//   resave: false,
-//   saveUninitialized: true,
-//   store: sessionStore,
-// }));
+// 세션
+app.use(session({
+  secret: 'session!',
+  resave: false,
+  saveUninitialized: true,
+  store: sessionStore,
+}));
 
 
 app.use('/', index);
