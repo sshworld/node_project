@@ -8,8 +8,8 @@
     "Song" : {
         "host" : "localhost",
         "user" : "root",
-        "password" : "",
-        "database" : ""
+        "password" : "tjdgjs1218",
+        "database" : "mydb"
     },
     "Choi" : {
         "host" : "localhost",
