@@ -13,6 +13,10 @@ router.get('/list', (req, res) => {
   res.render('index.ejs', {pages: './list.ejs'})
 })
 
+router.get('/list/detail', (req, res) => {
+  res.render('index.ejs', {pages: './listDetail.ejs'})
+})
+
 // router.post('/', (req, res, next) => {
 //   req.session.recipe_name = req.body.session;
 //   console.log(req.session.recipe_name);
