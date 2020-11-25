@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="/stylesheets/detail.css">
+<script type="text/javascript" src="/javascripts/count.js"></script>
 
 <div class="container">
     <div class="view">
@@ -27,10 +28,10 @@
                 <div class="price-zone">
                     <h3>수량 : </h3>
                     <div class="count">
-                        <input type="number" value="1" min="1">
+                        <input type="number" id="order_count" value="1" min="1">
                         <span>
-                            <button value="증가"></button>
-                            <button value="감소"></button>
+                            <button value="증가" onclick="count_up()"></button>
+                            <button value="감소" onclick="count_down()"></button>
                         </span>
                     </div>
                 </div>
@@ -45,9 +46,5 @@
             </div>
 
         </div>
-    </div>
-
-    <div class="review">
-        <h3>리뷰</h3>
     </div>
 </div>

@@ -113,3 +113,8 @@
     cursor: pointer;
     text-align: center;
 }
+
+.choice-btn:hover {
+    transition: 0.5s ease-in-out;
+    background-color: orangered;
+}
