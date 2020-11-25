@@ -34,12 +34,76 @@
 }
 
 .goods-content .price-total {
-    position: relative;
+    width: 100%;
 }
 
 .goods-content .price-total .price-zone {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.goods-content .price-total .price-zone .count {
+    margin: 0 0 0 20px;
     position: relative;
     border: 1px solid #c6c6c6;
     width: 71px;
     height: 32px;
+}
+
+.goods-content .price-total .price-zone .count input {
+    width: 44px;
+    height: 30px;
+    border: none;
+    text-align: center;
+    border-right: 1px solid #c6c6c6;
+}
+
+.goods-content .price-total .price-zone button {
+    overflow: hidden;
+    border: none;
+    width: 26px;
+    height: 16px;
+    position: absolute;
+    right: 0;
+    color: transparent;
+}
+
+.goods-content .price-total .price-zone button:nth-of-type(1) {
+    top: 0;
+    background: url('/images/arrow-up.png') no-repeat center;
+    background-size: 50%;
+}
+
+.goods-content .price-total .price-zone button:nth-of-type(2) {
+    bottom: 0;
+    background: url('/images/arrow-down.png') no-repeat center;
+    background-size: 50%;
+    border-top: 1px solid #c6c6c6;
+}
+
+.total-price {
+    font-size: 20px;
+}
+
+.price {
+    border: none;
+    font-size: 20px;
+}
+
+.choice {
+    width: 50%;
+}
+
+.choice-btn {
+    width: 40%;
+    height: 70px;
+    position: relative;
+    margin-top: 20px;
+    background-color: #fff;
+    border: 3px solid #262626;
+    border-radius: 5px;
+    color: #262626;
+    cursor: pointer;
+    text-align: center;
 }
