@@ -59,6 +59,12 @@
     border-right: 1px solid #c6c6c6;
 }
 
+.count input[type=number]::-webkit-inner-spin-button, 
+.count input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
 .goods-content .price-total .price-zone button {
     overflow: hidden;
     border: none;
