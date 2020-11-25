@@ -2,19 +2,19 @@
     width: 100vw;
     height: 100vh;
     padding: 10%;
-  }
+}
 
-  .view {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      width: 100%;
-      flex-direction: row;
-  }
+.view {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    flex-direction: row;
+}
 
-  .goods-img {
-      width: 50%;
-  }
+.goods-img {
+    width: 50%;
+}
 
 .goods-img img {
     width: 80%;
@@ -27,4 +27,14 @@
 .goods-content div {
     margin-bottom: 20px;
     align-content: center;
+    text-align: right;
+}
+
+.goods-content h3 {
+    font-size: 30px;
+    text-align: right;
+}
+
+.goods-content .count {
+    
 }
