@@ -57,20 +57,20 @@
         </div>
 
         <% for(var i = 0; i < 4; i++) { %>
-            <div class="review-content">
-                <div class="review-detail">
-                    <img src="/images/tomato.png" alt="" class="review-img">
-                    <h3>user_name</h3>
-                    <span>
-                        rating
-                    </span>
-                    <p>date</p>
-                </div>
-    
-                <div class="content">
-                    <p>content</p>
-                </div>
+        <div class="review-content">
+            <div class="review-detail">
+                <img src="/images/tomato.png" alt="" class="review-img">
+                <h3>user_name</h3>
+                <span>
+                    rating
+                </span>
+                <p>date</p>
             </div>
+
+            <div class="content">
+                <p>content</p>
+            </div>
+        </div>
         <% } %>
 
     </div>
@@ -98,7 +98,16 @@
     <div class="title">
         <h3>상세정보</h3>
     </div>
+    <% for(var i = 0; i < 5; i++) { %>
     <div class="step">
-        
+        <div class="step-count">
+            <h3>1</h3>
+            <p>step1</p>
+        </div>
+
+        <div class="step-img">
+            <img src="/images/tomato.png" alt="">
+        </div>
     </div>
+    <% } %>
 </div>
