@@ -1,21 +1,34 @@
-<link rel="stylesheet" href="/stylesheets/detail.css">
+<link rel="stylesheet" href="/stylesheets/review.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <div class="container">
-    <div class="review">
-        <div class="title">
-            <h3>리뷰</h3>
-            <p>개수</p>
+    <% for(var i = 0; i < 7; i++) { %>
+    <div class="card">
+        <div class="ranking">
+            <p><%=i%></p>
+        </div>
+        <a href="/list/detail"><img src="/images/tomato.png" alt="" class="card-image"></a>
+
+        <div class="card-content">
+            <p>너무너무 맛있고 아이들도 정말 좋아해서 그런지 저도 뿌듯하고 맘에 듭니다!!</p>
         </div>
 
-        <div class="review-content">
-            <div class="review-">
-                
-            </div>
+        <div class="card-info">
+            <div class="user_info">
 
-            <div class="content">
 
+                <p>user_name</p>
+                <span>
+                    <i class="material-icons" style="color: orange;">star</i>
+                    <i class="material-icons" style="color: orange;">star</i>
+                    <i class="material-icons" style="color: orange;">star</i>
+                    <i class="material-icons" style="color: orange;">star</i>
+                    <i class="material-icons" style="color: orange;">star</i>
+                    <p>(4.7)</p>
+                </span>
             </div>
+            <p>date</p>
         </div>
-        
     </div>
+    <% } %>
 </div>

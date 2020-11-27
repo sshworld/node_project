@@ -23,6 +23,13 @@ router.get('/list/detail', (req, res) => {
 //   res.redirect('/');
 // })
 
+router.get('/review', (req, res) => {
+  res.render('index.ejs', {pages:'./review.ejs'})
+})
+
+router.get('/ranking', (req, res) => {
+  res.render('index.ejs', {pages:'./ranking.ejs'})
+})
 
 
 

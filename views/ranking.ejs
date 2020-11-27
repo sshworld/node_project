@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="/stylesheets/ranking.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div class="container">
+    <% for(var i = 0; i < 7; i++) { %>
+        <div class="card">
+            <a href="/list/detail"><img src="/images/tomato.png" alt="" class="card-image"></a>
+
+            <div class="card-content">
+                <p>title</p>
+                <p>
+                    <a href="#">
+                        chef name
+                    </a>
+                </p>
+            </div>
+
+            <div class="card-info">
+                <div>
+                    <i class="material-icons">thumb_up</i>310
+                </div>
+                <div>
+                    <a href="/list/detail" class="card-link">View Article</a>
+                </div>
+            </div>
+        </div>
+    <% } %>
+</div>
