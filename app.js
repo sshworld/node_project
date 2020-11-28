@@ -14,7 +14,7 @@ const options = {
   host: 'localhost',
     port: 3306,
     user: 'root',
-    password: 'tjdgjs1218',
+    password: 'Gudans29810!',
     database: 'mydb'
 }
 
@@ -33,6 +33,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+//d
 
 // 세션
 app.use(session({

@@ -23,6 +23,10 @@ router.get('/list/detail', (req, res) => {
 //   res.redirect('/');
 // })
 
+//<%=categoryInfo[i].category_num%>
+router.get('/list/:category_num', (req, res, next) => {
+  res.render('index.ejs', {pages: './list.ejs'})
+  
 router.get('/review', (req, res) => {
   res.render('index.ejs', {pages:'./review.ejs'})
 })
