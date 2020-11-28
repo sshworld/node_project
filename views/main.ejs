@@ -3,38 +3,40 @@
 <h1>추천 레시피</h1>
 <div class="container">
 
-    
+
     <% for(var i = 0; i < 3; i++) { %>
-    <div class="card">
-        <div class="card-image" style="grid-area: image;
+    <a href="/list/detail">
+        <div class="card">
+            <div class="card-image" style="grid-area: image;
         background: url('/images/tomato.png');
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
         background-size: cover;">
-        </div>
+            </div>
 
-        <div class="card-text">
-            <span class="date">4days ago</span>
-            <h2>post one</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi, explicabo eveniet minus,a</p>
-        </div>
+            <div class="card-text">
+                <span class="date">4days ago</span>
+                <h2>post one</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi, explicabo eveniet minus,a</p>
+            </div>
 
-        <div class="card-stats">
-            <div class="stat">
-                <div class="value">4 <sup>m</sup></div>
-                <div class="type">read</div>
-            </div>
-            <div class="stat border">
-                <div class="value">5123</div>
-                <div class="type">views</div>
-            </div>
-            <div class="stat">
-                <div class="value">32</div>
-                <div class="type">comments</div>
+            <div class="card-stats">
+                <div class="stat">
+                    <div class="value">4 <sup>m</sup></div>
+                    <div class="type">read</div>
+                </div>
+                <div class="stat border">
+                    <div class="value">5123</div>
+                    <div class="type">views</div>
+                </div>
+                <div class="stat">
+                    <div class="value">32</div>
+                    <div class="type">comments</div>
+                </div>
             </div>
         </div>
-    </div>
+    </a>
     <% } %>
-    
+
 
 </div>

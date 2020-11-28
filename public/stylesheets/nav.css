@@ -100,33 +100,31 @@
   height: 50px;
   background: orangered;
   transition: all .4s ease-in-out;
-  margin-right: 80%;
+  margin-left: -80%;
 }
 
 #nav a:nth-child(1):hover ~ .line {
-  margin-right: 80%;
+  margin-left: -80%;
   transition: all .4s ease-in-out;
 }
 
 #nav a:nth-child(2):hover ~ .line {
-  margin-right: 40%;
+  margin-left: -40%;
   transition: all .4s ease-in-out;
 }
 
 #nav a:nth-child(3):hover ~ .line {
-  margin-right: 0%;
+  margin-left: 0%;
   transition: all .4s ease-in-out;
 }
 
 #nav a:nth-child(4):hover ~ .line {
   margin-left: 40%;
-  margin-right: 0%;
   transition: all .4s ease-in-out;
 }
 
 #nav a:nth-child(5):hover ~ .line {
   margin-left: 80%;
-  margin-right: 0%;
   transition: all .4s ease-in-out;
 }
 
@@ -304,12 +302,10 @@
 .search {
   max-width: 450px;
   position: absolute;
-  left: 40%;
+  left: 30%;
   top: 10%;
   width: 50%;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
   z-index: 9999;
 }
 

@@ -1,9 +1,67 @@
 #nav .line {
-  margin-right: 40%;
+  margin-left: -40%;
 }
 
 h1 {
   margin: 5%;
+}
+
+.category {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  left: 25%;
+  margin-bottom: 30px;
+}
+
+.category a {
+  font-size: 15px;
+  color: #262626;
+  text-decoration: none;
+  line-height: 50px;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  text-align: center;
+  width: 20%;
+}
+
+.category .lined {
+  position: absolute;
+  width: 20%;
+  height: 50px;
+  border-width: 3px;
+  border-color: #fff;
+  border-bottom-color: orangered;
+  border-style: solid;
+  transition: all .4s ease-in-out;
+  margin-left: -80%;
+}
+
+.category a:nth-child(1):hover ~ .lined {
+  margin-left: -80%;
+  transition: all .4s ease-in-out;
+}
+
+.category a:nth-child(2):hover ~ .lined {
+  margin-left: -40%;
+  transition: all .4s ease-in-out;
+}
+
+.category a:nth-child(3):hover ~ .lined {
+  margin-left: 0%;
+  transition: all .4s ease-in-out;
+}
+
+.category a:nth-child(4):hover ~ .lined {
+  margin-left: 40%;
+  transition: all .4s ease-in-out;
+}
+
+.category a:nth-child(5):hover ~ .lined {
+  margin-left: 80%;
+  transition: all .4s ease-in-out;
 }
 
 .container {

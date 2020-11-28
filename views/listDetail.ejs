@@ -1,0 +1,113 @@
+<link rel="stylesheet" href="/stylesheets/detail.css">
+<script type="text/javascript" src="/javascripts/count.js"></script>
+
+<div class="container">
+    <div class="view">
+        <div class="goods-img">
+            <img src="/images/tomato.png" alt="">
+        </div>
+
+        <div class="goods-content">
+            <h3>
+                <p>title</p>
+            </h3>
+
+            <div class="info">
+                sub info
+            </div>
+
+            <div class="price-box">
+                <h3>price ex) 40,000won</h3>
+            </div>
+
+            <div class="rating">
+                rating info
+            </div>
+
+            <div class="price-total">
+                <div class="price-zone">
+                    <h3>수량 : </h3>
+                    <div class="count">
+                        <input type="number" id="order_count" value="1" min="1">
+                        <span>
+                            <button value="증가" onclick="count_up()"></button>
+                            <button value="감소" onclick="count_down()"></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="total-price">
+                    금액 : <input type="text" class="price" value="price" readonly style="outline: none;">
+                </div>
+            </div>
+
+            <div class="choice">
+                <button class="choice-btn">장바구니</button>
+                <button class="choice-btn">바로주문</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="review">
+        <div class="title">
+            <h3>리뷰</h3>
+            <p>개수</p>
+        </div>
+
+        <% for(var i = 0; i < 4; i++) { %>
+        <div class="review-content">
+            <div class="review-detail">
+                <img src="/images/tomato.png" alt="" class="review-img">
+                <h3>user_name</h3>
+                <span>
+                    rating
+                </span>
+                <p>date</p>
+            </div>
+
+            <div class="content">
+                <p>content</p>
+            </div>
+        </div>
+        <% } %>
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="title">
+        <h3>재료</h3>
+    </div>
+    <div class="ingre-container">
+        <div class="ingredient">
+            <dl>
+                <dt>
+                    [재료]
+                </dt>
+                <dd>
+                    삼겹살, 삼겹살
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="title">
+        <h3>상세정보</h3>
+    </div>
+    <% for(var i = 0; i < 5; i++) { %>
+    <div class="step">
+        <div class="step-count">
+            <h3><%=i+1%></h3>
+            <p>step<%=i+1%></p>
+        </div>
+
+        <div class="step-img">
+            <img src="/images/tomato.png" alt="">
+        </div>
+    </div>
+    <% } %>
+</div>
