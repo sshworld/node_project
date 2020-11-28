@@ -1,0 +1,78 @@
+/*------------- 초기 설정 -------------*/
+
+#nav .line {
+    margin-left: 80%;
+  }
+
+.container {
+    width: 100vw;
+    padding: 10% 10% 0 10%;
+}
+
+
+/*---------- 쉐프 ----------*/
+.review {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.title {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    border-bottom: 1px solid #c6c6c6;
+}
+
+.title h3 {
+    font-size: 20px;
+}
+
+.title p {
+    margin-left: 20px;
+    font-size: 18px;
+    color: orangered;
+}
+
+.review-content {
+    margin-top: 20px;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    width: 100%;
+    border-bottom: 1px solid #c6c6c6;
+}
+
+.review-detail {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    width: 40%;
+}
+
+.review-img {
+    width: 20%;
+}
+
+.review-detail h3 {
+    margin-left: 15px;
+}
+
+.review-detail span {
+    margin-left: 10px;
+}
+
+.review-detail p {
+    margin-left: 10px;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+}
+
+.content p {
+    margin-left: 30px;
+}

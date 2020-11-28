@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="/stylesheets/chef.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<div class="container">
+    <div class="review">
+        <div class="title">
+            <h3>쉐프</h3>
+        </div>
+
+        <% for(var i = 0; i < 4; i++) { %>
+        <div class="review-content">
+            <div class="review-detail">
+                
+                <a href="/chefDetail"><h3>chef_name</h3></a>
+                <span>
+                    <i class="material-icons" style="color: orange;">star</i>
+                    <i class="material-icons" style="color: orange;">star</i>
+                    <i class="material-icons" style="color: orange;">star</i>
+                    <i class="material-icons" style="color: orange;">star</i>
+                    <i class="material-icons" style="color: orange;">star</i>
+                    <p>(4.7)</p>
+                </span>
+                <p>date</p>
+            </div>
+
+            <div class="content">
+                <p>category</p>
+                <p>category</p>
+                <p>category</p>
+                <p>category</p>
+            </div>
+        </div>
+        <% } %>
+
+    </div>
+</div>

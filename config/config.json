@@ -16,5 +16,11 @@
         "user" : "root",
         "password" : "Gudans29810!",
         "database" : "mydb"
+    },
+    "SongLabtop" : {
+        "host" : "localhost",
+        "user" : "root",
+        "password" : "",
+        "database" : "mydb"
     }
 }

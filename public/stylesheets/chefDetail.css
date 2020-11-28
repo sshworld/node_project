@@ -1,0 +1,129 @@
+#nav .line {
+    margin-left: 80%;
+  }
+  
+  h1 {
+    margin: 5%;
+  }
+  
+  .category {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    left: 25%;
+    margin-bottom: 30px;
+  }
+  
+  .category a {
+    font-size: 15px;
+    color: #262626;
+    text-decoration: none;
+    line-height: 50px;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    text-align: center;
+    width: 20%;
+  }
+  
+  .category .lined {
+    position: absolute;
+    width: 20%;
+    height: 50px;
+    border-width: 3px;
+    border-color: #fff;
+    border-bottom-color: orangered;
+    border-style: solid;
+    transition: all .4s ease-in-out;
+    margin-left: -80%;
+  }
+  
+  .category a:nth-child(1):hover ~ .lined {
+    margin-left: -80%;
+    transition: all .4s ease-in-out;
+  }
+  
+  .category a:nth-child(2):hover ~ .lined {
+    margin-left: -40%;
+    transition: all .4s ease-in-out;
+  }
+  
+  .category a:nth-child(3):hover ~ .lined {
+    margin-left: 0%;
+    transition: all .4s ease-in-out;
+  }
+  
+  .category a:nth-child(4):hover ~ .lined {
+    margin-left: 40%;
+    transition: all .4s ease-in-out;
+  }
+  
+  .category a:nth-child(5):hover ~ .lined {
+    margin-left: 80%;
+    transition: all .4s ease-in-out;
+  }
+  
+  .container {
+    display: grid;
+    padding: 5%;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+    border-width: 2px;
+    border-color: #fff;
+    border-top-color: #262626;
+    border-style: solid;
+  }
+  
+  .card {
+    box-shadow: 0 0 10px orangered;  
+  }
+  
+  .card-image {
+    width: 100%;
+    display: block;
+  }
+  
+  .card-content {
+    line-height: 1.5;
+    font-size: 0.9em;
+    padding: 15px;
+    background: #fafafa;
+  }
+  
+  .card-content > p:first-of-type {
+    margin-top: 0;
+    font-size: 20px;
+  }
+  
+  .card-content > p:last-of-type {
+    margin-bottom: 0;
+  }
+  
+  .card-info {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #555555;
+    background: #eeeeee;
+    font-size: 0.8em;
+    border-bottom: 2px solid #cccccc;
+  }
+  
+  .card-info i {
+    font-size: 0.9em;
+    margin-right: 8px;
+  
+  }
+  
+  .card-link {
+    color: #64968c;
+    text-decoration: none;
+  }
+  
+  .card-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* https://www.youtube.com/watch?v=5QB9agsk42Q */

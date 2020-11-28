@@ -1,0 +1,262 @@
+/*------------- 초기 설정 -------------*/
+
+#nav .line {
+    margin-left: -40%;
+  }
+
+.container {
+    width: 100vw;
+    padding: 10% 10% 0 10%;
+}
+
+/* ------------ 상품 구매 ---------*/
+
+.view {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    flex-direction: row;
+}
+
+.goods-img {
+    width: 50%;
+}
+
+.goods-img img {
+    width: 80%;
+}
+
+.goods-content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.goods-content div {
+    margin-bottom: 20px;
+    align-content: center;
+}
+
+.goods-content h3 {
+    font-size: 30px;
+}
+
+.goods-content .price-total {
+    width: 100%;
+}
+
+.goods-content .price-total .price-zone {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.goods-content .price-total .price-zone .count {
+    margin: 0 0 0 20px;
+    position: relative;
+    border: 1px solid #c6c6c6;
+    width: 71px;
+    height: 32px;
+}
+
+.goods-content .price-total .price-zone .count input {
+    width: 44px;
+    height: 30px;
+    border: none;
+    text-align: center;
+    border-right: 1px solid #c6c6c6;
+}
+
+.count input[type=number]::-webkit-inner-spin-button, 
+.count input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.goods-content .price-total .price-zone button {
+    overflow: hidden;
+    border: none;
+    width: 26px;
+    height: 16px;
+    position: absolute;
+    right: 0;
+    color: transparent;
+}
+
+.goods-content .price-total .price-zone button:nth-of-type(1) {
+    top: 0;
+    background: url('/images/arrow-up.png') no-repeat center;
+    background-size: 50%;
+}
+
+.goods-content .price-total .price-zone button:nth-of-type(2) {
+    bottom: 0;
+    background: url('/images/arrow-down.png') no-repeat center;
+    background-size: 50%;
+    border-top: 1px solid #c6c6c6;
+}
+
+.total-price {
+    font-size: 20px;
+}
+
+.price {
+    border: none;
+    font-size: 20px;
+}
+
+.choice {
+    width: 50%;
+}
+
+.choice-btn {
+    width: 40%;
+    height: 70px;
+    position: relative;
+    margin-top: 20px;
+    background-color: #fff;
+    border: 3px solid #262626;
+    border-radius: 5px;
+    color: #262626;
+    cursor: pointer;
+    text-align: center;
+}
+
+.choice-btn:hover {
+    transition: 0.5s ease-in-out;
+    background-color: orangered;
+}
+
+/* --------------------- 리뷰 파트 --------------------*/
+
+.review {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.title {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    border-bottom: 1px solid #c6c6c6;
+}
+
+.title h3 {
+    font-size: 20px;
+}
+
+.title p {
+    margin-left: 20px;
+    font-size: 18px;
+    color: orangered;
+}
+
+.review-content {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    width: 100%;
+    border-bottom: 1px solid #c6c6c6;
+}
+
+.review-detail {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    width: 40%;
+}
+
+.review-img {
+    width: 20%;
+}
+
+.review-detail h3 {
+    margin-left: 15px;
+}
+
+.review-detail span {
+    margin-left: 10px;
+}
+
+.review-detail p {
+    margin-left: 10px;
+}
+
+/*---------- 재료 ------------*/
+
+.ingre-container {
+    margin: 0 auto;
+    margin-top: 10%;
+    
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 8px;
+    background: #f1f1f2;
+}
+
+.ingredient {
+    margin: 20px;
+    font-size: 18px;
+}
+
+.ingredient dl {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.ingredient dt {
+    font-weight: bold;
+}
+
+/* ------------- 상세 보기 ---------------*/
+
+.step {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #b0b0b0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 8px;
+    background: #f1f1f2;
+}
+
+.step-count {
+    width: 70%;
+    display: flex;
+    margin: 40px;
+    height: 40px;
+    flex-direction: row;
+}
+
+.step-count h3 {
+    font-size: 30px;
+    background: orangered;
+    text-align: center;
+    color: #fff;
+    width: 40px;
+    border-radius: 20px;
+}
+
+.step-count p {
+    margin-left: 30px;
+    font-size: 25px;
+}
+
+.step-img {
+    margin-top: 40px;
+    position: relative;
+    width: 20%;
+    text-align: center;
+}
+
+.step-img img {
+    width: 50%;
+}

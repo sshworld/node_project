@@ -1,20 +1,12 @@
-<link rel="stylesheet" href="/stylesheets/list.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-<h1>분류</h1>
-
-<div class="category">
-    <a href="">전체</a>
-    <a href="">한식</a>
-    <a href="">중식</a>
-    <a href="">일식</a>
-    <a href="">양식</a>
-    <div class="lined"></div>
-</div>
+<link rel="stylesheet" href="/stylesheets/ranking.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <div class="container">
     <% for(var i = 0; i < 7; i++) { %>
         <div class="card">
+            <div class="ranking">
+                <p><%=i+1%></p>
+            </div>
             <a href="/list/detail"><img src="/images/tomato.png" alt="" class="card-image"></a>
 
             <div class="card-content">
