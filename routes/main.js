@@ -31,6 +31,12 @@ router.get('/ranking', (req, res) => {
   res.render('index.ejs', {pages:'./ranking.ejs'})
 })
 
+router.get('/chef', (req, res) => {
+  res.render('index.ejs', {pages:'./chef.ejs'})
+})
 
+router.get('/chefDetail', (req, res) => {
+  res.render('index.ejs', {pages:'./chefDetail.ejs'})
+})
 
 module.exports = router;
