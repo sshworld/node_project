@@ -1,0 +1,160 @@
+/*------------- 초기 설정 -------------*/
+
+#nav .line {
+    margin-left: -40%;
+  }
+
+.container {
+    width: 100vw;
+    padding: 10% 10% 0 10%;
+}
+
+/* ------------ 상품 구매 ---------*/
+
+.view {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    flex-direction: row;
+}
+
+.goods-img {
+    width: 50%;
+}
+
+.goods-img img {
+    width: 80%;
+}
+
+.goods-content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.goods-content div {
+    margin-bottom: 20px;
+    align-content: center;
+}
+
+.goods-content h3 {
+    font-size: 30px;
+}
+
+.goods-content .price-total {
+    width: 100%;
+}
+
+.goods-content .price-total .price-zone {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.goods-content .price-total .price-zone .count {
+    margin: 0 0 0 20px;
+    position: relative;
+    width: 50px;
+    height: 32px;
+    border: none;
+}
+
+.goods-content .price-total .price-zone .count input {
+    width: 44px;
+    height: 30px;
+    border: none;
+    font-size: 20px;
+    text-align: center;
+}
+.total-price {
+    font-size: 20px;
+}
+
+.price {
+    border: none;
+    font-size: 20px;
+}
+
+
+
+.choice {
+    width: 50%;
+}
+
+.choice-btn {
+    width: 40%;
+    height: 70px;
+    position: relative;
+    margin-top: 20px;
+    background-color: #fff;
+    border: 3px solid #262626;
+    border-radius: 5px;
+    color: #262626;
+    cursor: pointer;
+    text-align: center;
+}
+
+.choice-btn:hover {
+    transition: 0.5s ease-in-out;
+    background-color: orangered;
+}
+
+/* --------------------- 배송지 파트 --------------------*/
+
+.review {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.title {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    border-bottom: 1px solid #c6c6c6;
+}
+
+.title h3 {
+    font-size: 20px;
+}
+
+.title p {
+    margin-left: 20px;
+    font-size: 18px;
+    color: orangered;
+}
+
+.review-content {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    width: 100%;
+    border-bottom: 1px solid #c6c6c6;
+}
+
+.review-detail {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    width: 40%;
+}
+
+.review-img {
+    width: 20%;
+}
+
+.review-detail h3 {
+    margin-left: 15px;
+}
+
+.review-detail span {
+    margin-left: 10px;
+}
+
+.review-detail p {
+    margin-left: 10px;
+}
