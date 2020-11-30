@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="/stylesheets/detail.css">
 <script type="text/javascript" src="/javascripts/count.js"></script>
+<script type="text/javascript" src="/javascripts/order.js"></script>
 
 <div class="container">
     <div class="view">
@@ -41,8 +42,8 @@
             </div>
 
             <div class="choice">
-                <button class="choice-btn">장바구니</button>
-                <button class="choice-btn">바로주문</button>
+                <button class="choice-btn" onclick="basket('/basket/', 'amount');">장바구니</button>
+                <button class="choice-btn" onclick="order('/order/', 'amount');">바로주문</button>
             </div>
 
         </div>

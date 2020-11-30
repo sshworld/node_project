@@ -44,6 +44,8 @@ router.get('/chefDetail', (req, res) => {
   res.render('index.ejs', {pages:'./chefDetail.ejs'})
 })
 
-
+router.get('/mypage', (req, res) => {
+  res.render('mypage.ejs')
+})
 
 module.exports = router;

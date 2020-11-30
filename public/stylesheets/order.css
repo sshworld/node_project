@@ -2,7 +2,7 @@
 
 #nav .line {
     margin-left: -40%;
-  }
+}
 
 .container {
     width: 100vw;
@@ -68,6 +68,7 @@
     font-size: 20px;
     text-align: center;
 }
+
 .total-price {
     font-size: 20px;
 }
@@ -81,10 +82,11 @@
 
 .choice {
     width: 50%;
+    margin-left: 25%;
 }
 
 .choice-btn {
-    width: 40%;
+    width: 100%;
     height: 70px;
     position: relative;
     margin-top: 20px;
@@ -103,11 +105,11 @@
 
 /* --------------------- 배송지 파트 --------------------*/
 
-.review {
+.info-container {
     display: flex;
-    justify-content: center;
     flex-direction: column;
     width: 100%;
+    height: 80vh;
 }
 
 .title {
@@ -119,42 +121,44 @@
 
 .title h3 {
     font-size: 20px;
+    margin-bottom: 20px;
 }
 
-.title p {
-    margin-left: 20px;
-    font-size: 18px;
-    color: orangered;
-}
-
-.review-content {
-    margin-top: 20px;
+.content {
+    margin-top: 40px;
     display: flex;
     justify-content: flex-start;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
-    border-bottom: 1px solid #c6c6c6;
+    background: #f6f6f6;
+    border-radius: 8px;
 }
 
-.review-detail {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: row;
+.detail {
+    width: 100%;
+    font-size: 30px;
+    padding: 50px;
+}
+
+.detail select {
+    font-size: 30px;
+    width: 80%;
+}
+
+.detail .order {
     width: 40%;
+    margin-left: 25%;
 }
 
-.review-img {
+.detail label {
     width: 20%;
 }
 
-.review-detail h3 {
-    margin-left: 15px;
-}
-
-.review-detail span {
-    margin-left: 10px;
-}
-
-.review-detail p {
-    margin-left: 10px;
+.detail input {
+    border: none;
+    width: 80%;
+    font-size: 30px;
+    text-align: center;
+    background: #f6f6f6;
+    outline: none;
 }
