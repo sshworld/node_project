@@ -1,0 +1,69 @@
+
+<div class="box">
+    <div class="section-title">
+        <h1>주문 내역 조회</h1>
+    </div>
+
+    <div class="content">
+        <table class="table">
+            <colgroup>
+                <col style="width:auto">
+                <col style="width:14%">
+                <col style="width:14%">
+                <col style="width:14%">
+                <col style="width:10%">
+                <col style="width:11%">
+
+            </colgroup>
+
+            <thead>
+                <tr>
+                    <th scope="col">상품정보</th>
+                    <th scope="col">주문일자</th>
+                    <th scope="col">주문번호</th>
+                    <th scope="col">주문금액<br>(수량)</th>
+                    <th scope="col" colspan="2">주문상태</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% for(var i = 0; i < 7; i++) { %>
+                <tr>
+                    <td>
+                        <div class="row">
+                            <img src="/images/tomato.png" alt="" class="gift-img">
+                            <ul>
+                                <li><a href="#">쉐프명</a></li>
+                                <li><a href="#">제품명</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        2020.11.31
+                    </td>
+                    <td>
+                        주문번호00001
+                    </td>
+                    <td>
+                        <% var price = 10000 %>
+                        <% if(price > 1000) { %>
+                        <% price = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') %>
+                        <% }%>
+                        <%=price%>원<br>1개
+                    </td>
+                    <td>
+                        출고중
+                    </td>
+                    <td>
+                        <% if (false) { %>
+                        <button class="btn">후기작성</button>
+                        <% } else { %>
+                        <button class="btn">주문취소</button>
+                        <% } %>
+                    </td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</div>
