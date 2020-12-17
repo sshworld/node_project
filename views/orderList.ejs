@@ -27,14 +27,14 @@
             </thead>
 
             <tbody>
-                <% for(var i = 0; i < 7; i++) { %>
+                <% for(var i = 0; i < 1; i++) { %>
                 <tr>
                     <td>
                         <div class="row">
-                            <img src="/images/tomato.png" alt="" class="gift-img">
+                            <img src="/images/<%=i%>.jpg" alt="" class="gift-img">
                             <ul>
-                                <li><a href="#">쉐프명</a></li>
-                                <li><a href="#">제품명</a></li>
+                                <li><a href="#">김우성</a></li>
+                                <li><a href="#">오늘도 맛있는 돈가스</a></li>
                             </ul>
                         </div>
                     </td>
@@ -42,10 +42,10 @@
                         2020.11.31
                     </td>
                     <td>
-                        주문번호00001
+                        20201131-01
                     </td>
                     <td>
-                        <% var price = 10000 %>
+                        <% var price = 40000 %>
                         <% if(price > 1000) { %>
                         <% price = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') %>
                         <% }%>
