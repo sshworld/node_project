@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="/stylesheets/input.css">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+<form action="" class="container">
+    <div class="wrapper">
+        <input type="text" required="required">
+        <label for="">레시피 이름</label>
+    </div>
+
+    <div class="wrapper">
+        <input type="text" required="required">
+        <label for="">레시피 내용</label>
+    </div>
+
+    <div class="wrapper">
+        <input type="text" required="required">
+        <label for="">가격</label>
+    </div>
+
+    <div class="check">
+        <p>카테고리</p>
+        <br>
+        <% for(var i=0; i < 9; i++) { %>
+            <input type="radio" name="category" id=""> 아잉
+            <% if(i % 5==4) { %>
+                <br>
+            <% } %>
+        <% } %>
+    </div>
+
+    <div class="recipe">
+        <h2>레시피 사진</h2>
+        <a href="">추가하기</a>
+    </div>
+
+    <div class="image">
+        <div class="content">
+            <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+            <div class="text">No file chosen, yet!</div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <input type="text" required="required">
+        <label for="">가격</label>
+    </div>
+
+    <div class="btn">
+        <input type="submit" value="레시피 등록" style="font-size: 25px;">
+    </div>
+
+</form>

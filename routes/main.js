@@ -48,4 +48,8 @@ router.get('/mypage', (req, res) => {
   res.render('mypage.ejs')
 })
 
+router.get('/product', (req, res) => {
+  res.render('index.ejs', {pages:'./product.ejs'})
+})
+
 module.exports = router;

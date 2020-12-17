@@ -95,3 +95,26 @@
 #nav {
     display: none;
 }
+
+.check {
+    width: 500px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 8px;
+    margin-top: 20px;
+    color: #fff;
+    font-size: 20px;
+    border: 3px solid #fff;
+}
+
+.recipe {
+    margin-top: 20px;
+    color: #FFF;
+    display: flex;
+    flex-direction: row;
+}
+
+.recipe a {
+    margin-left: 10px;
+    color: #fff;
+}
