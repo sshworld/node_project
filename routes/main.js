@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router();
 var session = require('express-session');
 const MainController = require("../controller/main");
-const user = new MainController();
+const main = new MainController();
 
-router.get('/', (req, res) => {
-  res.render('index.ejs', {pages: './main.ejs'})
+router.get('/', main.selectMain, (req, res) => {
+  res.render('index.ejs', {pages: './main.ejs', Info:req.body.Info})
 })
 
 
@@ -13,8 +13,8 @@ router.get('/list', (req, res) => {
   res.render('index.ejs', {pages: './list.ejs'})
 })
 
-router.get('/list/detail', (req, res) => {
-  res.render('index.ejs', {pages: './listDetail.ejs'})
+router.get('/list/detail/:recipe_num', main.recipeDetail, (req, res) => {
+  res.render('index.ejs', {pages: './listDetail.ejs', Detail:req.body.Detail})
 })
 
 // router.post('/', (req, res, next) => {
