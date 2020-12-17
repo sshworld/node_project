@@ -5,7 +5,7 @@
 
 
     <% for(var i = 0; i < 3; i++) { %>
-    <a href="/list/detail">
+    <a href="/list/detail/<%=Info.scoreInfo[i].recipe_num%>">
         <div class="card">
             <div class="card-image" style="grid-area: image;
         background: url('/images/<%=i%>.jpg');
@@ -16,22 +16,22 @@
 
             <div class="card-text">
                 <span class="date">4days ago</span>
-                <h2>post one</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi, explicabo eveniet minus,a</p>
+                <h2><%=Info.scoreInfo[i].recipe_name%></h2>
+                <p><%=Info.scoreInfo[i].recipe_content%></p>
             </div>
 
             <div class="card-stats">
                 <div class="stat">
                     <div class="value">4 <sup>m</sup></div>
-                    <div class="type">read</div>
+                    <div class="type">주문 수</div>
                 </div>
                 <div class="stat border">
                     <div class="value">5123</div>
-                    <div class="type">views</div>
+                    <div class="type">리뷰 수</div>
                 </div>
                 <div class="stat">
-                    <div class="value">32</div>
-                    <div class="type">comments</div>
+                    <div class="value"><%=Info.scoreInfo[i].recipe_score%></div>
+                    <div class="type">평점</div>
                 </div>
             </div>
         </div>
