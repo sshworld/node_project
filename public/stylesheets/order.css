@@ -1,0 +1,164 @@
+/*------------- 초기 설정 -------------*/
+
+#nav .line {
+    margin-left: -40%;
+}
+
+.container {
+    width: 100vw;
+    padding: 10% 10% 0 10%;
+}
+
+/* ------------ 상품 구매 ---------*/
+
+.view {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    flex-direction: row;
+}
+
+.goods-img {
+    width: 50%;
+}
+
+.goods-img img {
+    width: 80%;
+}
+
+.goods-content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.goods-content div {
+    margin-bottom: 20px;
+    align-content: center;
+}
+
+.goods-content h3 {
+    font-size: 30px;
+}
+
+.goods-content .price-total {
+    width: 100%;
+}
+
+.goods-content .price-total .price-zone {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.goods-content .price-total .price-zone .count {
+    margin: 0 0 0 20px;
+    position: relative;
+    width: 50px;
+    height: 32px;
+    border: none;
+}
+
+.goods-content .price-total .price-zone .count input {
+    width: 44px;
+    height: 30px;
+    border: none;
+    font-size: 20px;
+    text-align: center;
+}
+
+.total-price {
+    font-size: 20px;
+}
+
+.price {
+    border: none;
+    font-size: 20px;
+}
+
+
+
+.choice {
+    width: 50%;
+    margin-left: 25%;
+}
+
+.choice-btn {
+    width: 100%;
+    height: 70px;
+    position: relative;
+    margin-top: 20px;
+    background-color: #fff;
+    border: 3px solid #262626;
+    border-radius: 5px;
+    color: #262626;
+    cursor: pointer;
+    text-align: center;
+}
+
+.choice-btn:hover {
+    transition: 0.5s ease-in-out;
+    background-color: orangered;
+}
+
+/* --------------------- 배송지 파트 --------------------*/
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 80vh;
+}
+
+.title {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    border-bottom: 1px solid #c6c6c6;
+}
+
+.title h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.content {
+    margin-top: 40px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    background: #f6f6f6;
+    border-radius: 8px;
+}
+
+.detail {
+    width: 100%;
+    font-size: 30px;
+    padding: 50px;
+}
+
+.detail select {
+    font-size: 30px;
+    width: 80%;
+}
+
+.detail .order {
+    width: 40%;
+    margin-left: 25%;
+}
+
+.detail label {
+    width: 20%;
+}
+
+.detail input {
+    border: none;
+    width: 80%;
+    font-size: 30px;
+    text-align: center;
+    background: #f6f6f6;
+    outline: none;
+}

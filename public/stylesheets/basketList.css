@@ -1,0 +1,52 @@
+
+.count {
+    margin: 0 0 0 20px;
+    position: relative;
+    border: 1px solid #c6c6c6;
+    width: 71px;
+    height: 32px;
+}
+
+.count input {
+    width: 18px;
+    height: 30px;
+    border: none;
+    border-right: 1px solid #c6c6c6;
+}
+
+.count input[type=number]::-webkit-inner-spin-button, 
+.count input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.count button {
+    overflow: hidden;
+    border: none;
+    width: 26px;
+    height: 16px;
+    position: absolute;
+    right: 0;
+    color: transparent;
+}
+
+.count button:nth-of-type(1) {
+    top: 0;
+    background: url('/images/arrow-up.png') no-repeat center;
+    background-size: 50%;
+}
+
+.count button:nth-of-type(2) {
+    bottom: 0;
+    background: url('/images/arrow-down.png') no-repeat center;
+    background-size: 50%;
+    border-top: 1px solid #c6c6c6;
+}
+
+.allOrder {
+    margin-top: 20px;
+}
+
+.allOrder button {
+    height: 80px;
+}

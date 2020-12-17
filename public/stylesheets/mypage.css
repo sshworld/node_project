@@ -1,0 +1,90 @@
+.content {
+    width: 100%;
+}
+
+.mypage {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+
+.user {
+    display: flex;
+    margin-left: 10%;
+    margin-top: 40px;
+    width: 80%;
+    height: 200px;
+    justify-content: center;
+    background: #262626;
+    color: #fff;
+    flex-direction: row;
+}
+
+.user h1 {
+    display: inline-block;
+    margin-top: 80px;
+    position: relative;
+}
+
+.user a {
+    display: inline-block;
+    margin-left: 20px;
+    color: #fff;
+}
+
+.mypage-content {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 100%;
+    margin-top: 40px;
+}
+
+.sidebar a {
+    text-align: center;
+    height: 80px;
+    font-size: 16px;
+    color: #AAAAAA;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.sidebar a:hover {
+    color: orangered;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+    padding: 20px;
+    border-left: 1px solid #262626;
+    margin-bottom: 20px;
+}
+
+.box {
+    margin-left: 20px;
+}
+
+.section-title {
+    margin-top: 40px;
+    height: 80px;
+    border-bottom: 1px solid #262626;
+}
+
+.section-title a {
+    float: right;
+}
+
+thead th {
+    height: 80px;
+}

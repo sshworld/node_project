@@ -1,0 +1,43 @@
+
+.content {
+    width: 100%;
+}
+
+.table {
+    width: 100%;
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.row img {
+    width: 80px;
+}
+
+.row li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+.row li:nth-child(2) {
+    font-weight: bold;
+}
+
+.btn {
+    background-color: #fff;
+    width: 100%;
+    height: 40px;
+    border: 1px solid #262626;
+    border-radius: 5px;
+    color: #262626;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #262626;
+    color: #fff;
+    transition: 0.5s ease;
+}
