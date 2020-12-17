@@ -26,9 +26,10 @@ class userController {
 
     //회원가입
     async signUp (req, res, next) {
-        const val = [req.body.user_id, req.body.user_pw, req.body.user_name, req.body.user_num, req.body.user_email]
+        const val = [req.body.user_id, req.body.user_pw, req.body.user_name, req.body.user_num, req.body.user_email, "회원"]
 
-        let signupInfo = await db(`INSERT INTO users(?,?,?,?,?) VALUES`, val)
+        console.log("에러");
+        let signupInfo = await db(`INSERT INTO users VALUES(?,?,?,?,?,?)`, val)
 
         req.body.signupInfo = signupInfo
 
