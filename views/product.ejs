@@ -30,20 +30,49 @@
     </div>
 
     <div class="recipe">
-        <h2>레시피 사진</h2>
+        <h2>재료</h2>
         <a href="">추가하기</a>
     </div>
 
-    <div class="image">
-        <div class="content">
-            <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
-            <div class="text">No file chosen, yet!</div>
+    <div class="step" style="flex-direction: row;">
+        <div class="wrapper" style="width: 40%;">
+            <input type="text" required="required">
+            <label for="">재료</label>
+        </div>
+        <div class="wrapper" style="width: 40%; margin-left: 20px;">
+            <input type="text" required="required">
+            <label for="">수량</label>
         </div>
     </div>
 
-    <div class="wrapper">
-        <input type="text" required="required">
-        <label for="">가격</label>
+    <div class="recipe">
+        <h2>레시피 사진</h2>
+    </div>
+
+    <div class="step">
+        <div class="wrapping">
+            <div class="image">
+                <div class="image-content">
+                    <img id="goImg" src="" alt="" hidden>
+                </div>
+                <div class="content">
+                    <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                    <div class="text">No file chosen, yet!</div>
+                </div>
+                <div class="cancle-btn"><i class="fas fa-times"></i></div>
+                <div class="file-name">File name here</div>
+            </div>
+            <input type="file" id="default-btn" hidden>
+            <button type="button" onclick="defaultBtnActive()" id="custom-btn">Choose a file</button>
+            <script type="text/javascript" src="/javascripts/product.js"></script>
+        </div>
+
+        <div class="wrapper">
+            <input type="text" required="required">
+            <label for="">Step 1</label>
+        </div>
+
+        <a href="">추가하기</a>
     </div>
 
     <div class="btn">

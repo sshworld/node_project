@@ -11,10 +11,10 @@ const session = require('express-session');
 const mysqlStore = require("express-mysql-session")(session)
 
 const options = {
-  host: 'localhost',
+  host: '192.168.96.23',
     port: 3306,
     user: 'root',
-    password: 'tjdgjs1218',
+    password: 'Gudans29810!',
     database: 'mydb'
 }
 
