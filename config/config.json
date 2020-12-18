@@ -12,7 +12,7 @@
         "database" : "mydb"
     },
     "Choi" : {
-        "host" : "localhost",
+        "host" : "192.168.96.23",
         "user" : "root",
         "password" : "Gudans29810!",
         "database" : "mydb"

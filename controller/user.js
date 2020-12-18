@@ -97,6 +97,96 @@ class userController {
 
         next();
     }
+    //마이페이지 보여주기
+    async myPageInfo (req, res, next) {
+        let userName = await db("SELECT * FROM users WHERE user_id = ? ",[req.session.user_id])
+
+        const myPageInfo = {
+            userName : userName
+        }
+
+        req.myPageInfo = myPageInfo
+
+        next();
+    }
+
+
+    // 장바구니 조회
+    async myBasketInfo (req, res, next) {
+        let userName = await db("SELECT * FROM users WHERE user_id = ? ",[req.session.user_id])
+
+        const myPageInfo = {
+            userName : userName
+        }
+
+        req.myPageInfo = myPageInfo
+
+        const myBasketInfo = {
+            
+        }
+
+        req.myBasketInfo = myBasketInfo
+
+        next();
+    }
+    // 구매 후기 
+    async orderReviewInfo (req, res, next) {
+        let userName = await db("SELECT * FROM users WHERE user_id = ? ",[req.session.user_id])
+
+        const myPageInfo = {
+            userName : userName
+        }
+
+        req.myPageInfo = myPageInfo
+
+        const orderReviewInfo = {
+            
+        }
+
+        req.orderRviewInfo = orderReviewInfo
+
+        next();
+    }
+    // 카드 내역
+    async myCardInfo (req, res, next) {
+        let userName = await db("SELECT * FROM users WHERE user_id = ? ",[req.session.user_id])
+        let readCardData = await db("SELECT * FROM cards WHERE user_id =?", [req.session.user_id])
+
+        const myPageInfo = {
+            userName : userName
+        }
+
+        req.myPageInfo = myPageInfo
+
+        const myCardInfo = {
+            readCardData : readCardData
+        }
+
+        req.myCardInfo = myCardInfo
+
+        next();
+    }
+
+    // 배송지 내역
+    async myAddrInfo (req, res, next) {
+        let userName = await db("SELECT * FROM users WHERE user_id = ? ",[req.session.user_id])
+        let readAddrData = await db("SELECT * FROM places WHERE user_id =?", [req.session.user_id])
+        
+        const myPageInfo = {
+            userName : userName
+        }
+
+        req.myPageInfo = myPageInfo
+
+        const myAddrInfo = {
+            readAddrData : readAddrData
+        }
+
+        req.myAddrInfo = myAddrInfo
+
+        next();
+    }
+
 }
   
 module.exports = userController;

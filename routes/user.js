@@ -24,10 +24,6 @@ router.post('/signUp', user.signUp, (req, res, next) => {
 })
 
 
-//마이페이지
-router.get('/myPage', (req, res) => {
-  res.render('index.ejs', {pages: './myPage.ejs'});
-})
 
 // ------------------카드------------------
 //카드 등록
@@ -82,5 +78,32 @@ router.get('/myOrderList', user.orderInfo, (req, res) => {
 router.get('/deleteMyOrder/:order_num', user.deleteOrder, (req, res) => {
   res.send('<script type="text/javascript">alert("주문이 삭제 되었습니다.");location.href="/user/myOrderList";</script>');
 })
+
+
+// 마이페이지 
+router.get('/mypage', user.myPageInfo, (req, res) => {
+  res.render('mypage.ejs', {pageCount : 0, myPageInfo : req.myPageInfo})
+})
+// 장바구니 조회
+router.get('/basketList', user.myBasketInfo, (req, res) => {
+  res.render('mypage.ejs', {pageCount : 2 , myBasketInfo : req.myBasketInfo, myPageInfo : req.myPageInfo})
+})
+
+
+// 구매 후기
+router.get('/orderReview', user.orderReviewInfo, (req, res) => {
+  res.render('mypage.ejs', {pageCount : 3, orderReviewInfo : req.orderReivewInfo, myPageInfo : req.myPageInfo})
+})
+
+// 카드 내역
+router.get('/mycard', user.myCardInfo, (req, res) => {
+  res.render('mypage.ejs', {pageCount : 4, myCardInfo : req.myCardInfo, myPageInfo : req.myPageInfo})
+})
+
+// 배송지 내역 
+router.get('/myaddr', user.myAddrInfo, (req, res) => {
+  res.render('mypage.ejs', {pageCount : 5, myAddrInfo : req.myAddrInfo, myPageInfo : req.myPageInfo})
+})
+
 
 module.exports = router;

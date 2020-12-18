@@ -1,3 +1,4 @@
+const { LoopDetected } = require("http-errors");
 const db = require("../middleware/db")
 
 class mainController {
@@ -37,6 +38,47 @@ class mainController {
 
         next();
     }
+    // 쉐프 페이지 - 쉐프정보 불러오기
+    async chefInfo (req, res, next) {
+
+        
+        // let Info = await db("SELECT distinct user_name , category_name FROM users as u, recipe as r, category as c WHERE u.user_id = r.user_id AND r.category_num = c.category_num ORDER BY user_name")
+
+        let Info = await db("SELECT distinct user_name, user_id FROM users WHERE user_sort =?", ["요리사"])
+       
+        
+        req.body.Info = Info
+
+
+        next();
+    }
+
+      // 쉐프 페이지 - 쉐프 상세 정보 불러오기
+      async chefDetailInfo (req, res, next) {
+
+        
+
+        let chefName = await db("SELECT user_name FROM users WHERE user_sort =? AND user_id =? " , ["요리사", req.params.user_id])
+        let recipeInfo = await db("SELECT * FROM recipe WHERE user_id=? ", [req.params.user_id])
+        let recipeScore = await db("SELECT avg(recipe_score) as recipe_score FROM recipe WHERE recipe_num = ?", [ req.body.recipe_num])
+        
+        
+        
+        
+
+        const chefDetailInfo = {
+            chefName : chefName,
+            recipeInfo : recipeInfo,
+            recipeScore : recipeScore
+            
+        }
+        
+        req.chefDetailInfo = chefDetailInfo
+
+        next();
+    }
+
+
 }
   
 module.exports = mainController;

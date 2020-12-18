@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="/stylesheets/basketList.css">
 <link rel="stylesheet" href="/stylesheets/mycard.css">
 <link rel="stylesheet" href="/stylesheets/MyPage.css">
-<% var pageCount = 1 %>
+
 <style>
     .sidebar a:nth-child(<%=pageCount %>) {
         color: orangered;
@@ -14,18 +14,18 @@
 
     <div class="user">
         <div>
-            <h1>송성헌님의 MyPage</h1>
+            <h1><%= myPageInfo.userName[0].user_name%>님의 MyPage</h1>
             <a href="#">수정하기</a>
         </div>
     </div>
 
     <div class="mypage-content">
         <div class="sidebar">
-            <a href="#">주문 내역 조회</a>
-            <a href="#">장바구니 조회</a>
-            <a href="#">구매 후기</a>
-            <a href="#">카드 내역</a>
-            <a href="#">배송지 내역</a>
+            <a href="/user/orderList">주문 내역 조회</a>
+            <a href="/user/basketList">장바구니 조회</a>
+            <a href="/user/orderReview">구매 후기</a>
+            <a href="/user/mycard">카드 내역</a>
+            <a href="/user/myaddr">배송지 내역</a>
         </div>
 
         <div class="container">
