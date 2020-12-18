@@ -135,6 +135,7 @@
     width: 430px;
     place-items: center;
     text-align: center;
+    margin-top: 20px;
 }
 
 .wrapping .image {
@@ -229,9 +230,18 @@
     background: linear-gradient(135deg, orangered 0%, orange);
 }
 
-.step a {
+a {
     font-size: 18px;
     font-weight: 500;
     color: #fff;
     margin-top: 20px;
+}
+
+#stepIn {
+    width: 550px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    place-items: center;
+    padding: 10px;
 }
