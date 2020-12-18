@@ -2,7 +2,10 @@ const express = require('express');
 const router = express.Router();
 var session = require('express-session');
 const MainController = require("../controller/main");
+const userController = require('../controller/user');
 const main = new MainController();
+
+
 
 router.get('/', main.selectMain, (req, res) => {
   res.render('index.ejs', {pages: './main.ejs', Info:req.body.Info})
@@ -36,20 +39,30 @@ router.get('/ranking', (req, res) => {
   res.render('index.ejs', {pages:'./ranking.ejs'})
 })
 
-router.get('/chef', (req, res) => {
-  res.render('index.ejs', {pages:'./chef.ejs'})
-})
+// router.get('/chef', (req, res) => {
+//   res.render('index.ejs', {pages:'./chef.ejs'})
+// })
 
-router.get('/chefDetail', (req, res) => {
-  res.render('index.ejs', {pages:'./chefDetail.ejs'})
-})
+// router.get('/chefDetail', (req, res) => {
+//   res.render('index.ejs', {pages:'./chefDetail.ejs'})
+// })
 
-router.get('/mypage', (req, res) => {
-  res.render('mypage.ejs')
-})
+
 
 router.get('/product', (req, res) => {
   res.render('index.ejs', {pages:'./product.ejs'})
 })
 
+// 쉐프 페이지 - 쉐프정보 불러오기
+router.get('/chef', main.chefInfo, (req, res, next) => {
+  
+  res.render('index.ejs', {pages:'./chef.ejs', Info:req.body.Info})
+})
+
+// 쉐프 페이지 - 쉐프 상세 불러오기
+router.get('/chefDetail/:user_id', main.chefDetailInfo, (req,res) => {
+ 
+ 
+  res.render('index.ejs', {pages:'./chefDetail.ejs', chefDetailInfo:req.chefDetailInfo });
+})
 module.exports = router;

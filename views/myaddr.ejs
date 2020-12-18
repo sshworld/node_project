@@ -3,24 +3,24 @@
         <h1>배송지 내역</h1>
         <a href=#>추가</a>
     </div>
-    <% for(var i = 1; i < 4; i++) { %>
+    <% for(i = 0; i < myAddrInfo.readAddrData.length ; i++) { %>
         
     <div class="box-content">
         <a href="#">삭제</a>
         <div class="detail">
             <label for="">우편번호 : </label>
-            <input type="text" id="card_num" name="card_num" value="58132" readonly required="required">
+            <input type="text" id="card_num" name="card_num" value="<%= myAddrInfo.readAddrData[i].place_num%>" readonly required="required">
         </div>
 
         <div class="detail">
             <label for="">기본주소 : </label>
-            <input type="text" id="card_date" name="card_date" value="Gwangjangro21bungil 46 " readonly
+            <input type="text" id="card_date" name="card_date" value="<%= myAddrInfo.readAddrData[i].place_addr%> " readonly
                 required="required">
         </div>
 
         <div class="detail">
             <label for="">상세주소 : </label>
-            <input type="text" id="card_type" name="card_type" value="centerm apartment 1504ho" readonly
+            <input type="text" id="card_type" name="card_type" value="<%= myAddrInfo.readAddrData[i].place_addrinfo%>" readonly
                 required="required">
         </div>
         

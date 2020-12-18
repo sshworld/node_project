@@ -1,18 +1,18 @@
 <link rel="stylesheet" href="/stylesheets/chefDetail.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-<h1>chef_name</h1>
+<h1><%= chefDetailInfo.chefName[0].user_name%> 쉐프</h1>
 
 <div class="container">
-    <% for(var i = 0; i < 7; i++) { %>
+    <% for(var i = 0; i < chefDetailInfo.recipeInfo.length; i++) { %>
         <div class="card">
             <a href="/list/detail"><img src="/images/tomato.png" alt="" class="card-image"></a>
 
             <div class="card-content">
-                <p>title</p>
+                <p><%= chefDetailInfo.recipeInfo[i].recipe_name%></p>
                 <p>
-                    <a href="#">
-                        chef name
+                    <a href="/">
+                        <%= chefDetailInfo.chefName[0].user_name%>
                     </a>
                 </p>
             </div>
@@ -24,10 +24,10 @@
                     <i class="material-icons" style="color: orange;">star</i>
                     <i class="material-icons" style="color: orange;">star</i>
                     <i class="material-icons" style="color: orange;">star</i>
-                    <p>(4.7)</p>
+                    <p><%= chefDetailInfo.recipeScore.recipe_score%></p>
                 </span>
                 <div>
-                    <a href="/list/detail" class="card-link">View Article</a>
+                    <a href="/list/detail" class="card-link">상세보기</a>
                 </div>
             </div>
         </div>
