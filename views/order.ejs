@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="/stylesheets/order.css">
 
 <form action="/order/<%=recipe.recipe_num%>" method="POST">
+<script type="text/javascript" src="/javascripts/orderDetail.js"></script>
     <div class="container">
         <div class="view">
             <div class="goods-img">
@@ -41,6 +42,7 @@
             <div class="title">
                 <h3>배송지 정보</h3>
             </div>
+            <input type="hidden" id="myAddrData" value="<%=JSON.stringify(place)%>">
 
             <div class="content">
                 <div class="detail">
@@ -55,18 +57,18 @@
 
                 <div class="detail">
                     <label for="">우편번호 : </label>
-                    <input type="text" id="shipping_num" name="place_num" value="58132" readonly required="required">
+                    <input type="text" id="shipping_num" name="place_num" value="<%=place[0].place_num%>" readonly required="required">
                 </div>
 
                 <div class="detail">
                     <label for="">기본주소 : </label>
-                    <input type="text" id="basic_addr" name="place_addr" value="Gwangjangro21bungil 46 " readonly
+                    <input type="text" id="basic_addr" name="place_addr" value="<%=place[0].place_addr%>" readonly
                         required="required">
                 </div>
 
                 <div class="detail">
                     <label for="">상세주소 : </label>
-                    <input type="text" id="detail_addr" name="place_addrinfo" value="centerm apartment 1504ho" readonly
+                    <input type="text" id="detail_addr" name="place_addrinfo" value="<%=place[0].place_addrinfo%>" readonly
                         required="required">
                 </div>
             </div>
@@ -77,11 +79,12 @@
             <div class="title">
                 <h3>카드 정보</h3>
             </div>
+            <input type="hidden" id="myCardData" value="<%=JSON.stringify(card)%>">
 
             <div class="content">
                 <div class="detail">
                     <label for="">카드 : </label>
-                    <select name="order" class="order" id="order-card" onchange="addr()">
+                    <select name="order" class="order" id="order-card" onchange="card()">
                         
                         <% for(var i = 0; i < card.length; i++) { %>
                         <option value="<%=card[i].card_num%>"><%=card[i].card_date%>  <%=card[i].card_cvc%></option>
@@ -91,18 +94,18 @@
 
                 <div class="detail">
                     <label for="">카드번호 : </label>
-                    <input type="text" id="card_num" name="card_num" value="58132" readonly required="required">
+                    <input type="text" id="card_num" name="card_num" value="<%=card[0].card_num%>" readonly required="required">
                 </div>
 
                 <div class="detail">
                     <label for="">유효기간 : </label>
-                    <input type="text" id="card_date" name="card_date" value="Gwangjangro21bungil 46 " readonly
+                    <input type="text" id="card_date" name="card_date" value="<%=card[0].card_date%>" readonly
                         required="required">
                 </div>
 
                 <div class="detail">
                     <label for="">카드종류 : </label>
-                    <input type="text" id="card_type" name="card_type" value="centerm apartment 1504ho" readonly
+                    <input type="text" id="card_type" name="card_type" value="<%=card[0].card_kind%>" readonly
                         required="required">
                 </div>
             </div>
@@ -114,22 +117,3 @@
         </div>
     </div>
 </form>
-
-<script>
-    function addr() {
-        var select = document.getElementById('order-addr')
-
-        var selectValue = select.options[select.selectIndex].value
-
-        var shipping_num = document.getElementById('shipping_num')
-
-        var basic_addr = document.getElementById('basic_addr')
-
-        var detail_addr = document.getElementById('detail_addr')
-
-        "<% var addr = [] %>"
-        "<% addr[1] = 'ddd'%>"
-
-        shipping_num.value = "<%=addr[" + selectValue + "] %>"
-    }
-</script>
