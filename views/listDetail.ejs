@@ -45,8 +45,8 @@
             </div>
 
             <div class="choice">
-                <button class="choice-btn" onclick="basket('/basket/', 'amount');">장바구니</button>
-                <button class="choice-btn" onclick="order('/order/', 'amount');">바로주문</button>
+                <button class="choice-btn" onclick="basket('/basket/<%=Detail.DetailInfo.recipe_num%>', 'amount');">장바구니</button>
+                <button class="choice-btn" onclick="order('/order/<%=Detail.DetailInfo.recipe_num%>', 'amount');">바로주문</button>
             </div>
 
         </div>
@@ -57,7 +57,8 @@
     <div class="review">
         <div class="title">
             <h3>리뷰</h3>
-            <p>개수 <%=Detail.Count.review_num%></p>
+            <% console.log(Detail.Count.count)%>
+            <p>개수 <%=Detail.Count.count%></p>
         </div>
 
         <% for(var i = 0; i < Detail.Review.length; i++) { %>

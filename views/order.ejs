@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="/stylesheets/order.css">
 
-<form action="">
+<form action="/order/<%=recipe.recipe_num%>" method="POST">
     <div class="container">
         <div class="view">
             <div class="goods-img">
@@ -9,7 +9,7 @@
 
             <div class="goods-content">
                 <h3>
-                    <p>title</p>
+                    <p><%=recipe.recipe_name%></p>
                 </h3>
 
                 <div class="info">
@@ -28,12 +28,13 @@
                         </div>
                     </div>
                     <div class="total-price">
-                        금액 : <input type="text" class="price" value="price" readonly style="outline: none;">
+                        금액 : <input type="text" class="price" name="price" value="price" readonly style="outline: none;">
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
 
     <div class="container">
         <div class="info-container">
@@ -45,27 +46,27 @@
                 <div class="detail">
                     <label for="">배송지 : </label>
                     <select name="order" class="order" id="order-addr" onchange="addr()">
-                        <option value="0" selected>sdfs</option>
-                        <% for(var i = 1; i < 4; i++) { %>
-                        <option value="<%=i%>"><%=i%></option>
+                       
+                        <% for(var i = 0; i < place.length; i++) { %>
+                        <option value="<%=place[i].place_id%>"><%=place[i].place_num%></option>
                         <% } %>
                     </select>
                 </div>
 
                 <div class="detail">
                     <label for="">우편번호 : </label>
-                    <input type="text" id="shipping_num" name="shipping_num" value="58132" readonly required="required">
+                    <input type="text" id="shipping_num" name="place_num" value="58132" readonly required="required">
                 </div>
 
                 <div class="detail">
                     <label for="">기본주소 : </label>
-                    <input type="text" id="basic_addr" name="basic_addr" value="Gwangjangro21bungil 46 " readonly
+                    <input type="text" id="basic_addr" name="place_addr" value="Gwangjangro21bungil 46 " readonly
                         required="required">
                 </div>
 
                 <div class="detail">
                     <label for="">상세주소 : </label>
-                    <input type="text" id="detail_addr" name="detail_addr" value="centerm apartment 1504ho" readonly
+                    <input type="text" id="detail_addr" name="place_addrinfo" value="centerm apartment 1504ho" readonly
                         required="required">
                 </div>
             </div>
@@ -81,9 +82,9 @@
                 <div class="detail">
                     <label for="">카드 : </label>
                     <select name="order" class="order" id="order-card" onchange="addr()">
-                        <option value="0" selected>sdfs</option>
-                        <% for(var i = 1; i < 4; i++) { %>
-                        <option value="<%=i%>"><%=i%></option>
+                        
+                        <% for(var i = 0; i < card.length; i++) { %>
+                        <option value="<%=card[i].card_num%>"><%=card[i].card_date%>  <%=card[i].card_cvc%></option>
                         <% } %>
                     </select>
                 </div>
