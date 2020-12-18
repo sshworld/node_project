@@ -30,24 +30,59 @@
     </div>
 
     <div class="recipe">
-        <h2>레시피 사진</h2>
-        <a href="">추가하기</a>
+        <h2>재료</h2>
+        <a onclick="addIn()">추가하기</a>
     </div>
 
-    <div class="image">
-        <div class="content">
-            <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
-            <div class="text">No file chosen, yet!</div>
+    <div class="step" id="stepIng" style="flex-direction: column;">
+        <div id="stepIn">
+            <div class="wrapper" style="width: 30%;">
+                <input type="text" required="required">
+                <label for="">재료</label>
+            </div>
+            <div class="wrapper" style="width: 30%; margin-left: 20px;">
+                <input type="text" required="required">
+                <label for="">수량</label>
+            </div>
         </div>
     </div>
 
-    <div class="wrapper">
-        <input type="text" required="required">
-        <label for="">가격</label>
+    <div class="recipe">
+        <h2>레시피 사진</h2>
+        <a onclick="stepPlus()" style="cursor: pointer;" id="stepPlus">추가하기</a>
+
+    </div>
+
+    <div class="step" id="stepParents">
+        <div id="steps">
+            <div class="wrapping" id="wrapping">
+                <div class="image" id="image1">
+                    <div class="image-content">
+                        <img id="goImg1" src="" alt="" hidden>
+                    </div>
+                    <div class="content">
+                        <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                        <div class="text">No file chosen, yet!</div>
+                    </div>
+                    <div class="cancle-btn" id="cancle-btn1"><i class="fas fa-times"></i></div>
+                    <div class="file-name">File name here</div>
+                </div>
+                <input type="file" name="recipe" id="default-btn1" hidden>
+                <button type="button" onclick="defaultBtnActive(1)" id="custom-btn">Choose a file</button>
+                <div class="wrapper" style="width: 430px;">
+                    <input type="text" name="step" required="required">
+                    <label for="">Step1</label>
+                </div>
+            </div>
+
+            
+        </div>
+
     </div>
 
     <div class="btn">
         <input type="submit" value="레시피 등록" style="font-size: 25px;">
     </div>
+    <script type="text/javascript" src="/javascripts/product.js"></script>
 
 </form>

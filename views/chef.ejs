@@ -7,11 +7,12 @@
             <h3>쉐프</h3>
         </div>
 
-        <% for(var i = 0; i < 4; i++) { %>
+        <%for(var i=0; i < Info.length; i++ ) {%>
+       
         <div class="review-content">
             <div class="review-detail">
-                
-                <a href="/chefDetail"><h3>chef_name</h3></a>
+               
+                <a href="/chefDetail/<%= Info[i].user_id%>"><h3><%= Info[i].user_name%></h3></a>
                 <span>
                     <i class="material-icons" style="color: orange;">star</i>
                     <i class="material-icons" style="color: orange;">star</i>
@@ -20,7 +21,7 @@
                     <i class="material-icons" style="color: orange;">star</i>
                     <p>(4.7)</p>
                 </span>
-                <p>date</p>
+              
             </div>
 
             <div class="content">
@@ -29,8 +30,8 @@
                 <p>category</p>
                 <p>category</p>
             </div>
+           
         </div>
-        <% } %>
-
+        <%}%>       
     </div>
 </div>
