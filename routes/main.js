@@ -48,23 +48,17 @@ router.get('/list/detail/:recipe_num', main.recipeDetail, (req, res) => {
   res.render('index.ejs', {pages: './listDetail.ejs', Detail:req.body.Detail})
 })
 
-// router.post('/', (req, res, next) => {
-//   req.session.recipe_name = req.body.session;
-//   console.log(req.session.recipe_name);
-//   res.redirect('/');
-// })
 
-//<%=categoryInfo[i].category_num%>
-router.get('/list/:category_num', (req, res, next) => {
-  res.render('index.ejs', {pages: './list.ejs'})
-})
-  
-router.get('/review', (req, res) => {
-  res.render('index.ejs', {pages:'./review.ejs'})
+// 후기   
+router.get('/review', main.selectReview, (req, res) => {
+  console.log(req.review);
+  res.render('index.ejs', {pages:'./review.ejs', review: req.review})
 })
 
-router.get('/ranking', (req, res) => {
-  res.render('index.ejs', {pages:'./ranking.ejs'})
+
+// 랭킹
+router.get('/ranking', main.selectRanking, (req, res) => {
+  res.render('index.ejs', {pages:'./ranking.ejs', ranking:req.ranking})
 })
 
 // router.get('/chef', (req, res) => {
@@ -76,10 +70,14 @@ router.get('/ranking', (req, res) => {
 // })
 
 
+// // 상품 등록
+// router.get('/product', (req, res) => {
+//   res.render('index.ejs', {pages:'./product.ejs'})
+// })
 
-router.get('/product', (req, res) => {
-  res.render('index.ejs', {pages:'./product.ejs'})
-})
+// router.post('/product', main.insertProduct, (req, res, next) => {
+//   res.send('<script type="text/javascript">alert("상품이 등록 되었습니다.");location.href="/";</script>');
+// })
 
 // 쉐프 페이지 - 쉐프정보 불러오기
 router.get('/chef', main.chefInfo, (req, res, next) => {
