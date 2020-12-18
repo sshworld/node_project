@@ -11,19 +11,19 @@
         <div class="goods-content">
 
             <h3>
-                <p>간단히 해먹을 수 있는 돈가스</p>
+                <p><%=Detail.DetailInfo.recipe_name%></p>
             </h3>
 
             <div class="info">
-                쉽고 간편한 1인분의 돈가스
+                <%=Detail.DetailInfo.recipe_content%>
             </div>
 
             <div class="price-box">
-                <h3>가격 40,000원</h3>
+                <h3>가격 <%=Detail.DetailInfo.recipe_money%>원</h3>
             </div>
 
             <div class="rating">
-                5.0
+                <%=Detail.DetailInfo.recipe_score%>
             </div>
 
             <div class="price-total">
@@ -35,10 +35,12 @@
                             <button value="증가" onclick="count_up()"></button>
                             <button value="감소" onclick="count_down()"></button>
                         </span>
+
+                        
                     </div>
                 </div>
                 <div class="total-price">
-                    금액 : <input type="text" class="price" value="40,000" readonly style="outline: none;">
+                    금액 : <input type="text" class="price" value="<%=Detail.DetailInfo.recipe_money%>" id="money" readonly style="outline: none;">
                 </div>
             </div>
 
@@ -55,22 +57,22 @@
     <div class="review">
         <div class="title">
             <h3>리뷰</h3>
-            <p>개수</p>
+            <p>개수 <%=Detail.Count.review_num%></p>
         </div>
 
-        <% for(var i = 0; i < 4; i++) { %>
+        <% for(var i = 0; i < Detail.Review.length; i++) { %>
         <div class="review-content">
             <div class="review-detail">
                 <img src="/images/tomato.png" alt="" class="review-img">
-                <h3>user_name</h3>
+                <h3><%=Detail.Review[i].user_id%></h3>
                 <span>
-                    rating
+                    <%=Detail.Review[i].review_score%>
                 </span>
-                <p>date</p>
+                <p><%=Detail.Review[i].review_date%></p>
             </div>
 
             <div class="content">
-                <p>content</p>
+                <p><%=Detail.Review[i].review_content%></p>
             </div>
         </div>
         <% } %>
@@ -113,3 +115,4 @@
     </div>
     <% } %>
 </div>
+

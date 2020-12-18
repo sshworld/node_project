@@ -22,5 +22,11 @@
         "user" : "root",
         "password" : "",
         "database" : "mydb"
+    },
+    "ChoiLabtop" : {
+        "host" : "localhost",
+        "user" : "root",
+        "password" : "",
+        "database" : "mydb"
     }
 }
