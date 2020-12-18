@@ -144,6 +144,28 @@ class mainController {
         next();
     }
 
+
+    async selectReview (req, res, next) {
+        const review = await db(`SELECT * FROM review ORDER BY review_date DESC`)
+
+        console.log(review);
+        req.review = review;
+        next();
+    }
+
+
+    async selectRanking (req, res, next) {
+        const ranking = await db(`SELECT COUNT(o.order_num) as count, r.*, COUNT(v.review_num) as review FROM orders as o, recipe as r, orderinfo as i
+        LEFT OUTER JOIN review as v ON i.recipe_num = v.recipe_num AND i.order_num = v.order_num WHERE o.order_num = i.order_num AND i.recipe_num = r.recipe_num GROUP BY r.recipe_num `)
+        
+        req.ranking = ranking;
+        next();
+    }
+
+
+    async insertProduct (req, res, next) {
+        const insert = await db (`INSERT INTO `)
+    }
 }
   
 module.exports = mainController;
