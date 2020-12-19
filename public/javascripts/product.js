@@ -74,7 +74,7 @@ function addIn() {
     var div = document.createElement('div')
     
     var str = `<div class="wrapper" style="width: 30%;">
-    <input type="text" name="ingredent" required="required">
+    <input type="text" name="ingredient" required="required">
     <label for="">재료</label>
 </div>
 <div class="wrapper" style="width: 30%; margin-left: 20px;">
