@@ -27,32 +27,32 @@
             </thead>
 
             <tbody>
-                <% for(var i = 0; i < 1; i++) { %>
+                <% for(var i = 0; i < myPageInfo.orderData.length; i++) { %>
                 <tr>
                     <td>
                         <div class="row">
-                            <img src="/images/<%=i%>.jpg" alt="" class="gift-img">
+                            <img src="<%= myPageInfo.orderData[i].image_path%>" alt="" class="gift-img">
                             <ul>
-                                <li><a href="#">김우성</a></li>
-                                <li><a href="#">오늘도 맛있는 돈가스</a></li>
+                                <li><a href="/list/detail/<%= myPageInfo.orderData[i].recipe_num%>"><%= myPageInfo.orderData[i].chef_name%></a></li>
+                                <li><a href="/list/detail/<%= myPageInfo.orderData[i].recipe_num%>"><%= myPageInfo.orderData[i].recipe_name%></a></li>
                             </ul>
                         </div>
                     </td>
                     <td>
-                        2020.11.31
+                        <%= myPageInfo.orderData[i].order_date%>
                     </td>
                     <td>
-                        20201131-01
+                        <%= myPageInfo.orderData[i].order_num%>
                     </td>
                     <td>
-                        <% var price = 40000 %>
+                        <% var price = myPageInfo.orderData[i].order_max %>
                         <% if(price > 1000) { %>
                         <% price = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') %>
                         <% }%>
-                        <%=price%>원<br>1개
+                        <%=price%>원<br><%= myPageInfo.orderData[i].order_sum%>개
                     </td>
                     <td>
-                        출고중
+                        <%= myPageInfo.orderData[i].order_state%>
                     </td>
                     <td>
                         <% if (false) { %>

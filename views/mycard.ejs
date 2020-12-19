@@ -3,24 +3,24 @@
         <h1>카드 내역</h1>
         <a href=#>추가</a>
     </div>
-    <% for(i = 0; i < myCardInfo.readCardData.length ; i++) { %>
+    <% for(i = 0; i < myPageInfo.readCardData.length; i++) { %>
         
     <div class="box-content">
         <a href="#">삭제</a>
         <div class="detail">
             <label for="">카드번호 : </label>
-            <input type="text" id="card_num" name="card_num" value="<%= myCardInfo.readCardData[i].card_num%>" readonly required="required">
+            <input type="text" id="card_num" name="card_num" value="<%= myPageInfo.readCardData[i].card_num%>" readonly required="required">
         </div>
 
         <div class="detail">
             <label for="">유효기간 : </label>
-            <input type="text" id="card_date" name="card_date" value="<%= myCardInfo.readCardData[i].card_date%> " readonly
+            <input type="text" id="card_date" name="card_date" value="<%= myPageInfo.readCardData[i].card_date%> " readonly
                 required="required">
         </div>
 
         <div class="detail">
             <label for="">카드종류 :  </label>
-            <input type="text" id="card_type" name="card_type" value="<%= myCardInfo.readCardData[i].card_kind%>" readonly
+            <input type="text" id="card_type" name="card_type" value="<%= myPageInfo.readCardData[i].card_kind%>" readonly
                 required="required">
         </div>
         

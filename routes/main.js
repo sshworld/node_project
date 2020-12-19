@@ -3,6 +3,7 @@ const router = express.Router();
 var session = require('express-session');
 const MainController = require("../controller/main");
 const productImage = require("../controller/productImage");
+
 const main = new MainController();
 
 
@@ -72,8 +73,8 @@ router.post('/product', productImage.send, main.insertProduct, (req, res, next) 
 
 
 // 쉐프 페이지 - 쉐프정보 불러오기
-router.get('/chef', main.chefInfo, (req, res, next) => {
-  res.render('index.ejs', {pages:'./chef.ejs', Info:req.body.Info})
+router.get('/chef', main.chefInfo, (req, res, next) => {  
+  res.render('index.ejs', {pages:'./chef.ejs', Info:req.Info})
 })
 
 // 쉐프 페이지 - 쉐프 상세 불러오기
