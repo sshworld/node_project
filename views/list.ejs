@@ -3,14 +3,22 @@
 
 <h1>분류</h1>
 
+<% var lineCount = 2 %>
+<% var count = -80 + (40 * lineCount) %>
+<style>
+    .category .lined {
+        margin-left: <%=count%>%
+    }
+</style>
+
 <div class="category">
     <a href="/list">전체</a>
     <a href="/ko">한식</a>
     <a href="/ch">중식</a>
     <a href="/ja">일식</a>
     <a href="/us">양식</a>
-    <% var count = -80 + (40 * lineCount) %>
-    <div class="lined" style="margin-left: <%=count%>%;"></div>
+    
+    <div class="lined"></div>
 </div>
 
 <div class="container">
