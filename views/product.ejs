@@ -2,7 +2,7 @@
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 
-<form action="/order/productOrder/kk" method="post" class="container">
+<form action="/product" method="post" class="container" enctype="multipart/form-data">
     <div class="wrapper">
         <input type="text" name="recipe_title" required="required">
         <label for="">레시피 이름</label>
@@ -21,8 +21,8 @@
     <div class="check">
         <p>카테고리</p>
         <br>
-        <% for(var i=0; i < 9; i++) { %>
-            <input type="radio" name="category" value="2020" id=""> 아잉
+        <% for(var i=0; i < category.length; i++) { %>
+            <input type="radio" name="category" value="<%=category[i].category_name%>" id=""> <%=category[i].category_name%>
             <% if(i % 5==4) { %>
                 <br>
             <% } %>
@@ -37,7 +37,7 @@
     <div class="step" id="stepIng" style="flex-direction: column;">
         <div id="stepIn">
             <div class="wrapper" style="width: 30%;">
-                <input type="text" name="ingredent" required="required">
+                <input type="text" name="ingredient" required="required">
                 <label for="">재료</label>
             </div>
             <div class="wrapper" style="width: 30%; margin-left: 20px;">

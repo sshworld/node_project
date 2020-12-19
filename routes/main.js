@@ -2,12 +2,13 @@ const express = require('express');
 const router = express.Router();
 var session = require('express-session');
 const MainController = require("../controller/main");
+const productImage = require("../controller/productImage");
+
 const main = new MainController();
 
 
 
 router.get('/', main.selectMain, (req, res) => {
-  console.log("로그", req.scoreInfo);
   res.render('index.ejs', {pages: './main.ejs', scoreInfo:req.scoreInfo})
 })
 
@@ -60,36 +61,27 @@ router.get('/ranking', main.selectRanking, (req, res) => {
   res.render('index.ejs', {pages:'./ranking.ejs', ranking:req.ranking})
 })
 
-// router.get('/chef', (req, res) => {
-//   res.render('index.ejs', {pages:'./chef.ejs'})
-// })
 
-// router.get('/chefDetail', (req, res) => {
-//   res.render('index.ejs', {pages:'./chefDetail.ejs'})
-// })
+// 상품 등록
+router.get('/product', main.category, (req, res) => {
+  res.render('index.ejs', {pages:'./product.ejs', category:req.category})
+})
 
+router.post('/product', productImage.send, main.insertProduct, (req, res, next) => {
+  res.send('<script type="text/javascript">alert("상품이 등록 되었습니다.");location.href="/";</script>');
+})
 
-// // 상품 등록
-// router.get('/product', (req, res) => {
-//   res.render('index.ejs', {pages:'./product.ejs'})
-// })
-
-// router.post('/product', main.insertProduct, (req, res, next) => {
-//   res.send('<script type="text/javascript">alert("상품이 등록 되었습니다.");location.href="/";</script>');
-// })
 
 // 쉐프 페이지 - 쉐프정보 불러오기
-router.get('/chef', main.chefInfo, (req, res, next) => {
-  
+router.get('/chef', main.chefInfo, (req, res, next) => {  
   res.render('index.ejs', {pages:'./chef.ejs', Info:req.Info})
 })
 
 // 쉐프 페이지 - 쉐프 상세 불러오기
 router.get('/chefDetail/:user_id', main.chefDetailInfo, (req,res) => {
- 
- 
   res.render('index.ejs', {pages:'./chefDetail.ejs', chefDetailInfo:req.chefDetailInfo });
 })
+
 
 router.get('/addAddr', (req, res) => {
   res.render('index.ejs', {pages:'./addAddr'})

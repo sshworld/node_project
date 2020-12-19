@@ -13,6 +13,7 @@ class userController {
         }
 
         req.session.user_id = userInfo[0].user_id
+        req.session.user_sort = userInfo[0].user_sort
 
         //const mainObj = {
         //    userId : userID
