@@ -6,7 +6,11 @@ const user = new UserController();
 
 //로그인
 router.get('/login', (req, res) => {
-  res.render('index.ejs', {pages: './login.ejs'})
+  if(req.session.user_id) {
+    res.send('<script type="text/javascript">alert("이미 로그인 되었습니다.");location.href="/";</script>');
+  }else {
+    res.render('index.ejs', {pages: './login.ejs'})
+  }
 })
 
 router.post('/login', user.login, (req, res, next) => {
@@ -23,6 +27,26 @@ router.post('/signUp', user.signUp, (req, res, next) => {
   res.send('<script type="text/javascript">alert("회원가입 되었습니다.");location.href="/";</script>');
 })
 
+
+//로그아웃
+router.get('/logout',(req, res, next) => {
+  sess = req.session;
+  if (sess) {
+    req.session.destroy((err) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send('<script type="text/javascript">alert("로그아웃 되었습니다.");location.href="/";</script>');
+      }
+    })
+  }
+})
+
+
+//마이페이지
+router.get('/myPage', (req, res) => {
+  res.render('index.ejs', {pages: './myPage.ejs'});
+})
 
 
 // ------------------카드------------------

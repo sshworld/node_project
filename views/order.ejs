@@ -1,6 +1,11 @@
 <link rel="stylesheet" href="/stylesheets/order.css">
 
-<form action="">
+
+<form action="/order/order/<%=recipe.recipe_num%>/<%=amount%>" method="POST">
+
+
+<script type="text/javascript" src="/javascripts/orderDetail.js"></script>
+
     <div class="container">
         <div class="view">
             <div class="goods-img">
@@ -9,63 +14,67 @@
 
             <div class="goods-content">
                 <h3>
-                    <p>title</p>
+                    <p><%=recipe.recipe_name%></p>
                 </h3>
+
+               
 
                 <div class="info">
                     sub info
                 </div>
 
                 <div class="price-box">
-                    <h3>price ex) 40,000won</h3>
+                    <h3><%=recipe.recipe_money%></h3>
                 </div>
 
                 <div class="price-total">
                     <div class="price-zone">
                         <h3>수량 : </h3>
                         <div class="count">
-                            <input type="text" id="order_count" value="1" readonly style="outline: none;">
+                            <input type="text" id="order_count" name="max" value="<%=amount%>" readonly style="outline: none;">
                         </div>
                     </div>
                     <div class="total-price">
-                        금액 : <input type="text" class="price" value="price" readonly style="outline: none;">
+                        금액 : <input type="text" class="price" name="price" value="<%=amount*recipe.recipe_money%>" readonly style="outline: none;">
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
 
     <div class="container">
         <div class="info-container">
             <div class="title">
                 <h3>배송지 정보</h3>
             </div>
+            <input type="hidden" id="myAddrData" value="<%=JSON.stringify(place)%>">
 
             <div class="content">
                 <div class="detail">
                     <label for="">배송지 : </label>
                     <select name="order" class="order" id="order-addr" onchange="addr()">
-                        <option value="0" selected>sdfs</option>
-                        <% for(var i = 1; i < 4; i++) { %>
-                        <option value="<%=i%>"><%=i%></option>
+                       
+                        <% for(var i = 0; i < place.length; i++) { %>
+                        <option value="<%=place[i].place_id%>"><%=place[i].place_num%></option>
                         <% } %>
                     </select>
                 </div>
 
                 <div class="detail">
                     <label for="">우편번호 : </label>
-                    <input type="text" id="shipping_num" name="shipping_num" value="58132" readonly required="required">
+                    <input type="text" id="shipping_num" name="place_num" value="<%=place[0].place_num%>" readonly required="required">
                 </div>
 
                 <div class="detail">
                     <label for="">기본주소 : </label>
-                    <input type="text" id="basic_addr" name="basic_addr" value="Gwangjangro21bungil 46 " readonly
+                    <input type="text" id="basic_addr" name="place_addr" value="<%=place[0].place_addr%>" readonly
                         required="required">
                 </div>
 
                 <div class="detail">
                     <label for="">상세주소 : </label>
-                    <input type="text" id="detail_addr" name="detail_addr" value="centerm apartment 1504ho" readonly
+                    <input type="text" id="detail_addr" name="place_addrinfo" value="<%=place[0].place_addrinfo%>" readonly
                         required="required">
                 </div>
             </div>
@@ -76,32 +85,33 @@
             <div class="title">
                 <h3>카드 정보</h3>
             </div>
+            <input type="hidden" id="myCardData" value="<%=JSON.stringify(card)%>">
 
             <div class="content">
                 <div class="detail">
                     <label for="">카드 : </label>
-                    <select name="order" class="order" id="order-card" onchange="addr()">
-                        <option value="0" selected>sdfs</option>
-                        <% for(var i = 1; i < 4; i++) { %>
-                        <option value="<%=i%>"><%=i%></option>
+                    <select name="order" class="order" id="order-card" onchange="card()">
+                        
+                        <% for(var i = 0; i < card.length; i++) { %>
+                        <option value="<%=card[i].card_num%>"><%=card[i].card_date%>  <%=card[i].card_cvc%></option>
                         <% } %>
                     </select>
                 </div>
 
                 <div class="detail">
                     <label for="">카드번호 : </label>
-                    <input type="text" id="card_num" name="card_num" value="58132" readonly required="required">
+                    <input type="text" id="card_num" name="card_num" value="<%=card[0].card_num%>" readonly required="required">
                 </div>
 
                 <div class="detail">
                     <label for="">유효기간 : </label>
-                    <input type="text" id="card_date" name="card_date" value="Gwangjangro21bungil 46 " readonly
+                    <input type="text" id="card_date" name="card_date" value="<%=card[0].card_date%>" readonly
                         required="required">
                 </div>
 
                 <div class="detail">
                     <label for="">카드종류 : </label>
-                    <input type="text" id="card_type" name="card_type" value="centerm apartment 1504ho" readonly
+                    <input type="text" id="card_type" name="card_type" value="<%=card[0].card_kind%>" readonly
                         required="required">
                 </div>
             </div>
@@ -113,22 +123,3 @@
         </div>
     </div>
 </form>
-
-<script>
-    function addr() {
-        var select = document.getElementById('order-addr')
-
-        var selectValue = select.options[select.selectIndex].value
-
-        var shipping_num = document.getElementById('shipping_num')
-
-        var basic_addr = document.getElementById('basic_addr')
-
-        var detail_addr = document.getElementById('detail_addr')
-
-        "<% var addr = [] %>"
-        "<% addr[1] = 'ddd'%>"
-
-        shipping_num.value = "<%=addr[" + selectValue + "] %>"
-    }
-</script>

@@ -4,18 +4,18 @@
 <h1>랭킹</h1>
 
 <div class="container">
-    <% for(var i = 0; i < 7; i++) { %>
+    <% for(var i = 0; i < ranking.length; i++) { %>
         <div class="card">
             <div class="ranking">
                 <p><%=i+1%></p>
             </div>
-            <a href="/list/detail"><img src="/images/tomato.png" alt="" class="card-image"></a>
+            <a href="/list/detail/<%=ranking[i].recipe_num%>"><img src="/images/tomato.png" alt="" class="card-image"></a>
 
             <div class="card-content">
-                <p>title</p>
+                <p><%=ranking[i].recipe_name%></p>
                 <p>
                     <a href="#">
-                        chef name
+                        <%=ranking[i].user_id%>
                     </a>
                 </p>
             </div>
@@ -27,10 +27,10 @@
                     <i class="material-icons" style="color: orange;">star</i>
                     <i class="material-icons" style="color: orange;">star</i>
                     <i class="material-icons" style="color: orange;">star</i>
-                    <p>(4.7)</p>
+                    <p>(<%=ranking[i].recipe_score%>)</p>
                 </span>
                 <div>
-                    <a href="/list/detail" class="card-link">View Article</a>
+                    <a href="/list/detail/<%=ranking[i].recipe_num%>" class="card-link">View Article</a>
                 </div>
             </div>
         </div>

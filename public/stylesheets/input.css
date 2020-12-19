@@ -10,10 +10,11 @@
     display : flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
     background-color: #262626;
     position: relative;
     flex-direction: column;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 #menu-area {
@@ -112,9 +113,135 @@
     color: #FFF;
     display: flex;
     flex-direction: row;
+    margin-bottom: 20px;
 }
 
 .recipe a {
     margin-left: 10px;
     color: #fff;
+}
+
+.step {
+    width: 550px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    place-items: center;
+    padding: 10px;
+    border: 2px solid #fff;
+}
+
+.wrapping {
+    width: 430px;
+    place-items: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.wrapping .image {
+    position: relative;
+    height: 300px;
+    width: 100%;
+    border-radius: 10px;
+    border: 2px dashed orangered;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.image.active {
+    border: none;
+}
+
+.image .image-content {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image .image-content img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.image .icon {
+    font-size: 100px;
+    color: orangered;
+}
+
+.image .text {
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.image .cancle-btn {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    color: orangered;
+    display: none;
+}
+
+.image.active:hover .cancle-btn {
+    display: block;
+}
+
+.image .cancle-btn:hover {
+    color: #e74c3c;
+}
+
+.image .file-name {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    color: #fff;
+    padding: 8px 0;
+    font-size: 18px;
+    background: linear-gradient(135deg, orangered 0%, orange);
+    display: none;
+}
+
+.image.active:hover .file-name {
+    display: block;
+}
+
+#custom-btn {
+    margin-top: 30px;
+    width: 100%;
+    height: 50px;
+    display: block;
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    outline: none;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: linear-gradient(135deg, orangered 0%, orange);
+}
+
+a {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    margin-top: 20px;
+}
+
+#stepIn {
+    width: 550px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    place-items: center;
+    padding: 10px;
 }
