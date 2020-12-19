@@ -90,10 +90,21 @@ class mainController {
         
         // let Info = await db("SELECT distinct user_name , category_name FROM users as u, recipe as r, category as c WHERE u.user_id = r.user_id AND r.category_num = c.category_num ORDER BY user_name")
 
-        let Info = await db("SELECT distinct user_name, user_id FROM users WHERE user_sort =?", ["요리사"])
-       
-        
-        req.body.Info = Info
+        let Info = await db("SELECT distinct user_id AS chef_id, user_name as chef_name, (SELECT avg(recipe_score) FROM recipe WHERE user_id = chef_id) AS score FROM users WHERE user_sort = ?", ["요리사"])
+
+        let categoryInfo = []
+
+        for(var i = 0; i < Info.length; i++) {
+           categoryInfo[i] = await db("SELECT distinct c.category_name FROM category c, users u, recipe r WHERE u.user_id = r.user_id AND r.category_num = c.category_num AND u.user_id = ? ", [Info[i].chef_id])
+        }
+
+        const chefInfo ={
+            Info : Info,
+            categoryInfo : categoryInfo 
+        }
+        req.Info = chefInfo
+
+     
 
 
         next();
@@ -103,8 +114,11 @@ class mainController {
       async chefDetailInfo (req, res, next) {
 
         let chefName = await db("SELECT user_name FROM users WHERE user_sort =? AND user_id =? " , ["요리사", req.params.user_id])
-        let recipeInfo = await db("SELECT * FROM recipe WHERE user_id=? ", [req.params.user_id])
-        let recipeScore = await db("SELECT avg(recipe_score) as recipe_score FROM recipe WHERE recipe_num = ?", [ req.body.recipe_num])
+
+        let recipeInfo = await db("SELECT r.recipe_num, r.recipe_name, i.image_path FROM recipe r, image i WHERE r.recipe_num = i.recipe_num AND i.image_seq = 1 AND r.user_id=? ", [req.params.user_id])
+        let recipeScore = await db("SELECT recipe_score FROM recipe  WHERE recipe_num = ?", [req.body.recipe_num])
+        
+        console.log(recipeInfo);
 
         const chefDetailInfo = {
             chefName : chefName,
