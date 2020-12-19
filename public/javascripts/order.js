@@ -10,7 +10,7 @@ function order(url, count) {
     }
     else {
        
-        location.href = url; //+ document.getElementById('order_count').value;
+        location.href = url + document.getElementById('order_count').value;
     }
 
 }
