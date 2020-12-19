@@ -11,8 +11,8 @@ class mainController {
 
         const searchInfo = await db(`SELECT * FROM recipe WHERE recipe_name LIKE "%${req.session.recipe_name}%"`)
 
-        const scoreInfo = await db(`SELECT COUNT(o.order_num) as count, r.*, COUNT(v.review_num) as review FROM orders as o, recipe as r, orderinfo as i
-        LEFT OUTER JOIN review as v ON i.recipe_num = v.recipe_num AND i.order_num = v.order_num WHERE o.order_num = i.order_num AND i.recipe_num = r.recipe_num GROUP BY r.recipe_num ORDER BY count DESC limit 3`)
+        const scoreInfo = await db(`SELECT COUNT(o.order_num) as count, r.*, COUNT(v.review_num) as review, m.image_path FROM orders as o, recipe as r, image as m, orderinfo as i
+        LEFT OUTER JOIN review as v ON i.recipe_num = v.recipe_num AND i.order_num = v.order_num WHERE o.order_num = i.order_num AND i.recipe_num = r.recipe_num AND m.recipe_num = r.recipe_num GROUP BY r.recipe_num, m.image_num ORDER BY count DESC limit 3`)
 
         req.searchInfo = searchInfo;
         req.scoreInfo = scoreInfo;
