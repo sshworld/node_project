@@ -21,22 +21,22 @@
             </thead>
 
             <tbody>
-                <% for(var i = 0; i < 7; i++) { %>
+                <% for(var i = 0; i < myPageInfo.orderReviewData.length; i++) { %>
                 <tr>
                     <td>
                         <div class="row">
-                            <img src="/images/tomato.png" alt="" class="gift-img">
+                            <img src="<%= myPageInfo.orderReviewData[i].image_path%>" alt="" class="gift-img">
                             <ul>
-                                <li><a href="#">쉐프명</a></li>
-                                <li><a href="#">제품명</a></li>
+                                <li><a href="/list/detail/<%= myPageInfo.orderReviewData[i].recipe_num%>"><%= myPageInfo.orderReviewData[i].chef_name%></a></li>
+                                <li><a href="/list/detail/<%= myPageInfo.orderReviewData[i].recipe_num%>"><%= myPageInfo.orderReviewData[i].recipe_name%></a></li>
                             </ul>
                         </div>
                     </td>
                     <td>
                         <span>
-                            df
+                            <%= myPageInfo.orderReviewData[i].review_title%>
                         </span>
-                        <p>dddddddddddddddddddddddddddddddddddddddddddddd</p>
+                        <p><%= myPageInfo.orderReviewData[i].review_content%></p>
                     </td>
                 </tr>
                 <% } %>

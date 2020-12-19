@@ -71,8 +71,8 @@ router.get('/deletePlace/:place_id', user.deletePlace, (req, res, next) => {
 
 //-------------------주문--------------------
 //주문내역
-router.get('/myOrderList', user.orderInfo, (req, res) => {
-  res.render('index.ejs', {pages: './', orderInfo: req.orderInfo})
+router.get('/orderList', user.orderInfo, (req, res) => {
+  res.render('mypage.ejs', {pageCount : 1 , myPageInfo : req.myPageInfo})
 })
 
 router.get('/deleteMyOrder/:order_num', user.deleteOrder, (req, res) => {
@@ -86,23 +86,23 @@ router.get('/mypage', user.myPageInfo, (req, res) => {
 })
 // 장바구니 조회
 router.get('/basketList', user.myBasketInfo, (req, res) => {
-  res.render('mypage.ejs', {pageCount : 2 , myBasketInfo : req.myBasketInfo, myPageInfo : req.myPageInfo})
+  res.render('mypage.ejs', {pageCount : 2 , myPageInfo : req.myPageInfo})
 })
 
 
 // 구매 후기
 router.get('/orderReview', user.orderReviewInfo, (req, res) => {
-  res.render('mypage.ejs', {pageCount : 3, orderReviewInfo : req.orderReivewInfo, myPageInfo : req.myPageInfo})
+  res.render('mypage.ejs', {pageCount : 3, myPageInfo : req.myPageInfo})
 })
 
 // 카드 내역
 router.get('/mycard', user.myCardInfo, (req, res) => {
-  res.render('mypage.ejs', {pageCount : 4, myCardInfo : req.myCardInfo, myPageInfo : req.myPageInfo})
+  res.render('mypage.ejs', {pageCount : 4, myPageInfo : req.myPageInfo})
 })
 
 // 배송지 내역 
 router.get('/myaddr', user.myAddrInfo, (req, res) => {
-  res.render('mypage.ejs', {pageCount : 5, myAddrInfo : req.myAddrInfo, myPageInfo : req.myPageInfo})
+  res.render('mypage.ejs', {pageCount : 5, myPageInfo : req.myPageInfo})
 })
 
 

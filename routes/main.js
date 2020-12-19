@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 var session = require('express-session');
 const MainController = require("../controller/main");
-const userController = require('../controller/user');
 const main = new MainController();
 
 
@@ -55,7 +54,7 @@ router.get('/product', (req, res) => {
 // 쉐프 페이지 - 쉐프정보 불러오기
 router.get('/chef', main.chefInfo, (req, res, next) => {
   
-  res.render('index.ejs', {pages:'./chef.ejs', Info:req.body.Info})
+  res.render('index.ejs', {pages:'./chef.ejs', Info:req.Info})
 })
 
 // 쉐프 페이지 - 쉐프 상세 불러오기
