@@ -15,6 +15,7 @@ router.get('/', main.selectMain, (req, res) => {
 
 // 분류
 router.get('/list', main.selectList, (req, res) => {
+  console.log(req.selectList);
   res.render('index.ejs', {pages: './list.ejs', selectList:req.selectList})
 })
 
