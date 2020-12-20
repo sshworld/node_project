@@ -1,6 +1,6 @@
 const mysql = require('mysql2/promise')
 
-const config = require('../config/config.json')["Choi"]
+const config = require('../config/config.json')["ChoiLabtop"]
 
 const pool = mysql.createPool({
     host : config.host,

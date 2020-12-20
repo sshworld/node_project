@@ -9,7 +9,7 @@
     <div class="container">
         <div class="view">
             <div class="goods-img">
-                <img src="/images/tomato.png" alt="">
+                <img src="/images/productImage/<%=recipe.image_path%>" onerror="this.src='/images/tomato.png'" alt="">
             </div>
 
             <div class="goods-content">
@@ -20,7 +20,7 @@
                
 
                 <div class="info">
-                    sub info
+                    <%=recipe.recipe_content%>
                 </div>
 
                 <div class="price-box">
