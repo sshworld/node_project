@@ -66,7 +66,6 @@ class mainController {
         const selectList = await db(`SELECT * FROM category as c, recipe as r, image as i WHERE c.category_num = r.category_num AND r.category_num = 4 AND i.recipe_num = r.recipe_num AND i.image_seq = 1`)
 
         req.selectList = selectList
-        console.log(selectList);
 
         next();
     }
@@ -101,8 +100,6 @@ class mainController {
 
         let recipeInfo = await db("SELECT r.recipe_num, r.recipe_name, i.image_path FROM recipe r, image i WHERE r.recipe_num = i.recipe_num AND i.image_seq = 1 AND r.user_id=? ", [req.params.user_id])
         let recipeScore = await db("SELECT recipe_score FROM recipe  WHERE recipe_num = ?", [req.body.recipe_num])
-        
-        console.log(recipeInfo);
 
         const chefDetailInfo = {
             chefName : chefName,
@@ -133,8 +130,6 @@ class mainController {
             ing : ing
         }
 
-        console.log(image);
-        console.log(ing);
         req.body.Detail = Detail;
         next();
     }
@@ -175,7 +170,6 @@ class mainController {
 
     //레시피 등록
     async insertProduct (req, res, next) {
-        console.log(req.body);
 
         if (req.body.category == "한식"){
             req.session.category = 1
@@ -187,49 +181,35 @@ class mainController {
             req.session.category = 4
         }
 
-        console.log("에러1");
         const val = [req.body.recipe_title, req.body.recipe_content, 0, req.body.recipe_price, "Y", req.session.category, req.session.user_id]
         const insert = await db (`INSERT INTO recipe(recipe_name, recipe_content, recipe_score, recipe_money, recipe_yn, category_num, user_id) VALUES (?,?,?,?,?,?,?)`, val)
 
-        console.log("에러2");
         const num = await db(`SELECT max(recipe_num) as num FROM recipe WHERE user_id = "${req.session.user_id}"`)
-        console.log(num);
 
         const ingredient = req.body.ingredient
         const count = req.body.count
 
         if(Array.isArray(ingredient)) {
-            console.log("응 배열이야")
-
             for(var i=0; i<ingredient.length; i++) {
-                console.log("에러3");
                 let val2 = [1, num[0].num, count[i], ingredient[i]]
                 let ing = await db(`INSERT INTO ingredient_recipe(in_num, recipe_num, in_re_sum, in_name) VALUES (?,?,?,?)`, val2)
-    
             }
         } else {
-            console.log("에러4");
             let val4 = [1, num[0].num, count, ingredient]
             let ing2 = await db(`INSERT INTO ingredient_recipe(in_num, recipe_num, in_re_sum,in_name) VALUES (?,?,?,?)`, val4)
         }
 
-        console.log("나왔니?");
         const recipe = req.body.recipe
         const step = req.body.step
-        console.log(step);
         var sum = 0;
 
         if(Array.isArray(step)) {
-            console.log("응 배열이야22")
-
             for(var j=0; j<req.files.length; j++) {
-                console.log("에러5");
                 let val3 = [req.files[j].filename, step[j], num[0].num, j+1]
-                console.log("넣는값",val3);
                 let rec = await db(`INSERT INTO image(image_path, image_content, recipe_num, image_seq) VALUES (?,?,?,?)`, val3)
                 sum ++;
+
                 if(sum == step.length) {
-                    console.log("에러6");
                     next();
                 }
             }
@@ -238,20 +218,7 @@ class mainController {
             let rec = await db(`INSERT INTO image(image_path, image_content, recipe_num, image_seq) VALUES (?,?,?,?)`, val5)
             
                 next();
-            
-        }
-
-        // for(var j=0; j<req.files.length; j++) {
-        //     console.log("에러5");
-        //     let val3 = [req.files[j].filename, step[j], num[0].num, j+1]
-        //     let rec = await db(`INSERT INTO image(image_path, image_content, recipe_num, image_seq) VALUES (?,?,?,?)`, val3)
-        //     sum ++;
-        //     if(sum == recipe.length) {
-        //         console.log("에러6");
-        //         next();
-        //     }
-        // }
-        
+        }       
     }
 
 
@@ -260,10 +227,8 @@ class mainController {
         const sql = await db(`SELECT * FROM review WHERE order_num  = "${req.params.order_num}" AND recipe_num = "${req.params.recipe_num}"`)
 
         if (sql == "") {
-            
             next();
         } else {
-            
             res.send('<script type="text/javascript">alert("이미 등록된 후기가 있습니다.");history.back();</script>');
         }
     }
@@ -272,29 +237,22 @@ class mainController {
     async addReview (req, res, next) {
         
         const val = [req.params.order_num, req.params.recipe_num, req.body.review_title, req.body.review_content, moment().format('YYYY-MM-DD'), req.body.review_score, req.session.user_id]
-        console.log("에러1");
         const sql = await db(`INSERT INTO review(order_num, recipe_num, review_title, review_content, review_date, review_score, user_id) VALUES (?,?,?,?,?,?,?)`, val)
 
-        console.log("에러2");
         const selectScore = await db(`SELECT * FROM recipe WHERE recipe_num = "${req.params.recipe_num}"`)
 
         if (selectScore[0].recipe_score == 0) {
-            console.log("에러3");
             let val2 = [Number(req.body.review_score)]
             const updateScore = await db(`UPDATE recipe SET recipe_score=? WHERE recipe_num = "${req.params.recipe_num}"`, val2)
 
             next();
         }else {
             let val3 = [(Number(selectScore[0].recipe_score) + Number(req.body.review_score))/2]
-            console.log("에러4");
             const updateScore2 = await db(`UPDATE recipe SET recipe_score=? WHERE recipe_num = "${req.params.recipe_num}"`, val3)
     
             next();
         }
-       
     }
-
-
 }
   
 module.exports = mainController;

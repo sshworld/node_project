@@ -31,7 +31,6 @@ class userController {
     async signUp (req, res, next) {
         const val = [req.body.user_id, req.body.user_pw, req.body.user_name, req.body.user_num, req.body.user_email, "회원"]
 
-        console.log("에러");
         let signupInfo = await db(`INSERT INTO users VALUES(?,?,?,?,?,?)`, val)
 
         req.body.signupInfo = signupInfo
@@ -91,9 +90,6 @@ class userController {
 
         let deleteplace = await db("DELETE FROM places WHERE place_id = ?", [place_id])
 
-        console.log(deleteplace);
-
-
         next();
     }
 
@@ -101,7 +97,6 @@ class userController {
     async createBasket(req, res, next){
         try 
         {
-          
             let basketData = await db("SELECT * FROM baskets WHERE user_id =? ",  [req.session.user_id])
             
             if (basketData == ""){
@@ -110,8 +105,6 @@ class userController {
                     basket_num : req.body.basket_num,
                     user_id : req.session.user_id,
                     basket_date : moment().format('YYYY-MM-DD')
-                    
-                    
                 })
                
                 let readBasketData1 = await db("SELECT * FROM baskets WHERE user_id = ?", [req.session.user_id])
@@ -132,7 +125,7 @@ class userController {
                 let basketSum = await db("SELECT * FROM basketinfo  WHERE basket_num = ? AND recipe_num =?", [req.body.readBasketData[0].basket_num, req.params.recipe_num])
                 req.body.basketSum = basketSum
                 ;
-                console.log(basketSum);
+
                 if(basketSum == ""){
                     ;
                     let recipeInfoData2 = await db("INSERT INTO basketinfo SET ?",{
@@ -157,7 +150,7 @@ class userController {
 
             next();
         } catch (error) {
-            console.log(error);
+
         }
     }
 
@@ -299,7 +292,7 @@ class userController {
         
         
         catch (error) {
-        console.log(error)
+
         }
         
         
@@ -327,12 +320,8 @@ class userController {
 
             const selectBasketInfo = await db("SELECT * FROM basketinfo WHERE basket_num =? AND recipe_num =?", [basket_num, recipe_num])
 
-
-            console.log("에러1");
             const recipe = await db(`SELECT * FROM recipe WHERE recipe_num = "${req.params.recipe_num}"`)
-            console.log("에러2");
             const card = await db(`SELECT * FROM cards WHERE user_id = "${req.session.user_id}"`)
-            console.log("에러3");
             const place = await db(`SELECT * FROM places WHERE user_id = "${req.session.user_id}"`)
             
             req.recipe = recipe[0];
@@ -358,14 +347,9 @@ class userController {
             const selectBasketInfo = await db("SELECT * FROM basketinfo bi, recipe r WHERE bi.recipe_num = r.recipe_num AND basket_num =?", [basket_num])
             const basketSum = await db("SELECT basket_sum FROM basketinfo WHERE basket_num =? ", [basket_num])
             
-            console.log("에러1");
-            // const recipe = await db(`SELECT * FROM recipe WHERE recipe_num = "${req.body.selectBasketInfo}"`)
-            // console.log("에러2");
             const card = await db(`SELECT * FROM cards WHERE user_id = "${req.session.user_id}"`)
-            console.log("에러3");
             const place = await db(`SELECT * FROM places WHERE user_id = "${req.session.user_id}"`)
             
-            // req.recipe = recipe[0];
             req.card = card;
             req.place = place;
             req.selectBasketInfo = selectBasketInfo;

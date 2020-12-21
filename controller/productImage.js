@@ -21,12 +21,6 @@ const upload = multer({
 module.exports.send = (req, res, next) => {
   upload.array('recipe')(req, res, () => {
 
-    console.log('사진 들어왔나???');
-    console.log(req.files[0].filename);
-    for(var i =0; i<req.files.length; i++){
-      console.log(req.files[i].filename, '   '+i+'번사진');
-    }
-    
     next();
   })
 }
