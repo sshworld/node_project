@@ -9,7 +9,7 @@ router.get('/login', (req, res) => {
   if(req.session.user_id) {
     res.send('<script type="text/javascript">alert("이미 로그인 되었습니다.");location.href="/";</script>');
   }else {
-    res.render('index.ejs', {pages: './login.ejs'})
+    res.render('index.ejs', {pages: './login.ejs', sess:req.session})
   }
 })
 
@@ -20,7 +20,7 @@ router.post('/login', user.login, (req, res, next) => {
 
 //회원가입
 router.get('/signUp', (req, res) => {
-  res.render('index.ejs', {pages: './signUp.ejs'});
+  res.render('index.ejs', {pages: './signUp.ejs', sess:req.session});
 })
 
 router.post('/signUp', user.signUp, (req, res, next) => {
@@ -49,7 +49,7 @@ router.get('/logout',(req, res, next) => {
 // ------------------카드------------------
 //카드 등록
 router.get('/addCard', (req, res) => {
-  res.render('index.ejs', {pages: './addCard.ejs'});
+  res.render('index.ejs', {pages: './addCard.ejs', sess:req.session});
 })
 
 router.post('/addCard', user.insertCard, (req, res, next) => {
@@ -66,7 +66,7 @@ router.get('/deleteCard/:card_num', user.deleteCard, (req, res, next) => {
 //-------------------배송지--------------------
 //배송지 등록
 router.get('/addAddr', (req, res) => {
-  res.render('index.ejs', {pages: './addAddr.ejs'});
+  res.render('index.ejs', {pages: './addAddr.ejs', sess:req.session});
 })
 
 router.post('/addAddr', user.insertPlace, (req, res, next) => {
@@ -76,7 +76,7 @@ router.post('/addAddr', user.insertPlace, (req, res, next) => {
 
 //배송지 수정
 router.get('/updatePlace/:place_id', (req, res) => {
-  res.render('index.ejs', {pages: './'})
+  res.render('index.ejs', {pages: './', sess:req.session})
 })
 
 router.post('/updatePlace/:place_id', user.updatePlace, (req, res) => {
@@ -93,7 +93,7 @@ router.get('/deletePlace/:place_id', user.deletePlace, (req, res, next) => {
 //-------------------주문--------------------
 //주문내역
 router.get('/orderList', user.orderInfo, (req, res) => {
-  res.render('mypage.ejs', {pageCount : 1 , myPageInfo : req.myPageInfo})
+  res.render('mypage.ejs', {pageCount : 1 , myPageInfo : req.myPageInfo, sess:req.session})
 })
 
 //주문삭제
@@ -122,7 +122,7 @@ router.get('/basket/:recipe_num/:order_count', user.createBasket, (req, res) =>{
 
 //장바구니 개별 주문 
 router.get('/basket/order/:basket_num/:recipe_num', user.selectRecipe, (req, res) => {
-  res.render('index.ejs', { pages: './order.ejs', recipe: req.recipe, card: req.card, place: req.place, amount:req.selectBasketInfo[0].basket_sum })
+  res.render('index.ejs', { pages: './order.ejs', recipe: req.recipe, card: req.card, place: req.place, amount:req.selectBasketInfo[0].basket_sum, sess:req.session })
 })
 //장바구니 통합 주문 
 router.post('/basketOrder', user.basketOrder, (req, res, next) => {
@@ -130,31 +130,31 @@ router.post('/basketOrder', user.basketOrder, (req, res, next) => {
 })
 //장바구니 통합페이지로 넘어가기
 router.get('/allOrder/:basket_num', user.allBasket, (req, res) => {
-  res.render('index.ejs', { pages: './basketOrder.ejs', card: req.card, place: req.place, amount: req.selectBasketInfo , recipe:req.selectBasketInfo})
+  res.render('index.ejs', { pages: './basketOrder.ejs', card: req.card, place: req.place, amount: req.selectBasketInfo , recipe:req.selectBasketInfo, sess:req.session})
 } )
 // 마이페이지 
 router.get('/mypage', user.myPageInfo, (req, res) => {
-  res.render('mypage.ejs', {pageCount : 0 , myPageInfo : req.myPageInfo})
+  res.render('mypage.ejs', {pageCount : 0 , myPageInfo : req.myPageInfo, sess:req.session})
 })
 // 장바구니 조회
 router.get('/basketList', user.myBasketInfo, (req, res) => {
-  res.render('mypage.ejs', {pageCount : 2 , myPageInfo : req.myPageInfo})
+  res.render('mypage.ejs', {pageCount : 2 , myPageInfo : req.myPageInfo, sess:req.session})
 })
 
 
 // 구매 후기
 router.get('/orderReview', user.orderReviewInfo, (req, res) => {
-  res.render('mypage.ejs', {pageCount : 3, myPageInfo : req.myPageInfo})
+  res.render('mypage.ejs', {pageCount : 3, myPageInfo : req.myPageInfo, sess:req.session})
 })
 
 // 카드 내역
 router.get('/mycard', user.myCardInfo, (req, res) => {
-  res.render('mypage.ejs', {pageCount : 4, myPageInfo : req.myPageInfo})
+  res.render('mypage.ejs', {pageCount : 4, myPageInfo : req.myPageInfo, sess:req.session})
 })
 
 // 배송지 내역 
 router.get('/myaddr', user.myAddrInfo, (req, res) => {
-  res.render('mypage.ejs', {pageCount : 5, myPageInfo : req.myPageInfo})
+  res.render('mypage.ejs', {pageCount : 5, myPageInfo : req.myPageInfo, sess:req.session})
 })
 
 

@@ -4,6 +4,7 @@ const { LoopDetected } = require("http-errors");
 const { NetworkAuthenticationRequire } = require("http-errors");
 
 const db = require("../middleware/db")
+const moment = require('moment');
 
 class mainController {
     // 베스트 3개 가져오기
@@ -251,6 +252,23 @@ class mainController {
         //     }
         // }
         
+    }
+
+
+
+    async addReview (req, res, next) {
+        const val = [req.params.order_num, req.params.recipe_num, req.body.review_title, req.body.review_content, moment().format('YYYY-MM-DD'), req.body.review_score, req.session.user_id]
+        console.log("에러1");
+        const sql = await db(`INSERT INTO review(order_num, recipe_num, review_title, review_content, review_date, review_score, user_id) VALUES (?,?,?,?,?,?,?)`, val)
+
+        console.log("에러2");
+        const selectScore = await db(`SELECT * FROM recipe WHERE recipe_num = "${req.params.recipe_num}"`)
+
+        let val2 = [(Number(selectScore[0].recipe_score) + Number(req.body.review_score))/2]
+        console.log("에러3");
+        const updateScore = await db(`UPDATE recipe SET recipe_score=?`, val2)
+
+        next();
     }
 
 

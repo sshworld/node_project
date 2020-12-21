@@ -6,7 +6,7 @@ const order = new OrderController();
 
 
 router.get('/order/:recipe_num/:order_count', order.selectRecipe, (req, res) => {
-  res.render('index.ejs', { pages: './order.ejs', recipe: req.recipe, card: req.card, place: req.place, amount:req.amount })
+  res.render('index.ejs', { pages: './order.ejs', recipe: req.recipe, card: req.card, place: req.place, amount:req.amount, sess:req.session })
 })
 
 router.post('/order/:recipe_num/:order_count', order.order, (req, res, next) => {
