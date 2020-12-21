@@ -19,7 +19,7 @@
 
             <div class="card-info">
                 <span>
-                    <% var rating = Math.abs(chefDetailInfo.recipeInfo[i].recipe_score) %>
+                    <% var rating = Math.round(chefDetailInfo.recipeInfo[i].recipe_score) %>
                     <% for(var j = 0; j < 5; j++) { %>
                         <% if(j < rating) { %>
                             <i class="material-icons" style="color: orange;">star</i>

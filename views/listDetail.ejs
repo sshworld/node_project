@@ -76,7 +76,7 @@
                 <img src="/images/tomato.png" alt="" class="review-img">
                 <h3><%=Detail.Review[i].user_id%></h3>
                 <span>
-                    <% var rating = Math.abs(Detail.Review[i].review_score) %>
+                    <% var rating = Math.round(Detail.Review[i].review_score) %>
                     <% for(var j = 0; j < 5; j++) { %>
                         <% if(j < rating) { %>
                             <i class="material-icons" style="color: orange;">star</i>
