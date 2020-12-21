@@ -11,8 +11,8 @@ class mainController {
 
         const searchInfo = await db(`SELECT * FROM recipe WHERE recipe_name LIKE "%${req.session.recipe_name}%"`)
 
-        const scoreInfo = await db(`SELECT COUNT(o.order_num) as count, r.*, COUNT(v.review_num) as review FROM orders as o, recipe as r, orderinfo as i
-        LEFT OUTER JOIN review as v ON i.recipe_num = v.recipe_num AND i.order_num = v.order_num WHERE o.order_num = i.order_num AND i.recipe_num = r.recipe_num GROUP BY r.recipe_num ORDER BY count DESC limit 3`)
+        const scoreInfo = await db(`SELECT COUNT(o.order_num) as count, r.*, COUNT(v.review_num) as review, m.image_path FROM orders as o, recipe as r, image as m, orderinfo as i
+        LEFT OUTER JOIN review as v ON i.recipe_num = v.recipe_num AND i.order_num = v.order_num WHERE o.order_num = i.order_num AND i.recipe_num = r.recipe_num AND m.recipe_num = r.recipe_num AND m.image_seq = 1 GROUP BY r.recipe_num, m.image_num ORDER BY count DESC limit 3`)
 
         req.searchInfo = searchInfo;
         req.scoreInfo = scoreInfo;
@@ -121,13 +121,19 @@ class mainController {
         const sql = await db(`SELECT * FROM recipe WHERE recipe_num = "${req.params.recipe_num}"`)
         const review = await db(`SELECT * FROM review WHERE recipe_num = "${req.params.recipe_num}" ORDER BY review_date DESC`)
         const reviewCount = await db(`SELECT COUNT(review_num) as count FROM review WHERE recipe_num = "${req.params.recipe_num}"`)
+        const image = await db (`SELECT * FROM image WHERE recipe_num = "${req.params.recipe_num}"`)
+        const ing = await db(`SELECT * FROM ingredient_recipe WHERE recipe_num = "${req.params.recipe_num}"`)
 
         const Detail = {
             DetailInfo : sql[0],
             Review : review,
-            Count : reviewCount[0]
+            Count : reviewCount[0],
+            image : image,
+            ing : ing
         }
 
+        console.log(image);
+        console.log(ing);
         req.body.Detail = Detail;
         next();
     }
@@ -135,7 +141,7 @@ class mainController {
 
     //리뷰가져오기
     async selectReview (req, res, next) {
-        const review = await db(`SELECT * FROM review ORDER BY review_date DESC`)
+        const review = await db(`SELECT v.*, m.image_path FROM review as v, recipe as r, orderinfo as i, image as m WHERE v.order_num = i.order_num AND v.recipe_num = i.recipe_num AND r.recipe_num = i.recipe_num AND r.recipe_num = m.recipe_num AND m.image_seq = 1 ORDER BY review_date DESC`)
 
         req.review = review;
         next();
@@ -144,8 +150,7 @@ class mainController {
 
     //랭킹 가져오기
     async selectRanking (req, res, next) {
-        const ranking = await db(`SELECT COUNT(o.order_num) as count, r.*, COUNT(v.review_num) as review FROM orders as o, recipe as r, orderinfo as i
-        LEFT OUTER JOIN review as v ON i.recipe_num = v.recipe_num AND i.order_num = v.order_num WHERE o.order_num = i.order_num AND i.recipe_num = r.recipe_num GROUP BY r.recipe_num ORDER BY count DESC`)
+        const ranking = await db(`SELECT COUNT(o.order_num) as count, r.*, m.image_path FROM orders as o, recipe as r, image as m, orderinfo as i WHERE o.order_num = i.order_num AND i.recipe_num = r.recipe_num AND m.recipe_num = r.recipe_num AND m.image_seq = 1 GROUP BY r.recipe_num, m.image_num ORDER BY count DESC`)
         
         req.ranking = ranking;
         next();

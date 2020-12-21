@@ -5,7 +5,7 @@
 <div class="container">
     <div class="view">
         <div class="goods-img">
-            <img src="/images/돈가스.jpg" alt="">
+            <img src="/images/productImage/<%=Detail.image[0].image_path%>" onerror="this.src='/images/tomato.png'" alt="">
         </div>
 
         <div class="goods-content">
@@ -92,7 +92,10 @@
                     [재료]
                 </dt>
                 <dd>
-                    삼겹살, 삼겹살
+                    <% for (var i = 0; i < Detail.ing.length; i++) { %>
+                        <%= Detail.ing[i].in_name %> <%= Detail.ing[i].in_re_sum%>
+                    <% } %>
+                    
                 </dd>
             </dl>
         </div>
@@ -103,15 +106,15 @@
     <div class="title">
         <h3>상세정보</h3>
     </div>
-    <% for(var i = 0; i < 5; i++) { %>
+    <% for(var i = 0; i < Detail.image.length; i++) { %>
     <div class="step">
         <div class="step-count">
             <h3><%=i+1%></h3>
-            <p>step<%=i+1%></p>
+            <p><%=Detail.image[i].image_content%></p>
         </div>
 
         <div class="step-img">
-            <img src="/images/tomato.png" alt="">
+            <img src="/images/productImage/<%=Detail.image[i].image_path%>" onerror="this.src='/images/tomato.png'" alt="">
         </div>
     </div>
     <% } %>

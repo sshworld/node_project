@@ -15,6 +15,7 @@ router.get('/', main.selectMain, (req, res) => {
 
 // 분류
 router.get('/list', main.selectList, (req, res) => {
+  console.log(req.selectList);
   res.render('index.ejs', {pages: './list.ejs', selectList:req.selectList})
 })
 
@@ -85,5 +86,9 @@ router.get('/chefDetail/:user_id', main.chefDetailInfo, (req,res) => {
 
 router.get('/addAddr', (req, res) => {
   res.render('index.ejs', {pages:'./addAddr'})
+})
+
+router.get('/addReview', (req, res) => {
+  res.render('index.ejs', {pages:'./addReview.ejs'})
 })
 module.exports = router;

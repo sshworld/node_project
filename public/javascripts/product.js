@@ -4,7 +4,7 @@ const cancleBtn = document.querySelector(".cancle-btn");
 const customBtn = document.querySelector("#custom-btn");
 let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
 
-let count = 2
+let count = 1
 
 let inCount = 2
 
