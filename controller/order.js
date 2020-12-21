@@ -3,11 +3,13 @@ const { NetworkAuthenticationRequire } = require("http-errors");
 const db = require("../middleware/db");
 const moment = require("moment");
 
+
 class orderController {
     //주문 페이지
     async selectRecipe(req, res, next) {
         if (req.session.user_id) {
             console.log("에러1");
+
             const recipe = await db(
                 `SELECT * FROM recipe as r, image as i WHERE r.recipe_num = "${req.params.recipe_num}" AND i.image_seq = 1 AND r.recipe_num = i.recipe_num`
             );
@@ -43,6 +45,7 @@ class orderController {
     }
 
     //주문
+
     async order(req, res, next) {
 
         console.log("에러1");
