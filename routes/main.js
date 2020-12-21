@@ -7,7 +7,6 @@ const productImage = require("../controller/productImage");
 const main = new MainController();
 
 
-
 router.get('/', main.selectMain, (req, res) => {
   res.render('index.ejs', {pages: './main.ejs', scoreInfo:req.scoreInfo, sess:req.session})
 })
@@ -56,7 +55,6 @@ router.get('/list/detail/:recipe_num', main.recipeDetail, (req, res) => {
 
 // 후기   
 router.get('/review', main.selectReview, (req, res) => {
-  console.log(req.review);
   res.render('index.ejs', {pages:'./review.ejs', review: req.review, sess:req.session})
 })
 

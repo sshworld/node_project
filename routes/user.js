@@ -34,7 +34,7 @@ router.get('/logout',(req, res, next) => {
   if (sess) {
     req.session.destroy((err) => {
       if (err) {
-        console.log(err);
+
       } else {
         res.send('<script type="text/javascript">alert("로그아웃 되었습니다.");location.href="/";</script>');
       }
@@ -132,7 +132,6 @@ router.post('/basketOrder/:basket_num', user.basketOrder, (req, res, next) => {
 
 //장바구니 통합페이지로 넘어가기
 router.get('/allOrder/:basket_num', user.allBasket, (req, res) => {
-
   res.render('index.ejs', { pages: './basketOrder.ejs', card: req.card, place: req.place, amount: req.selectBasketInfo , recipe:req.selectBasketInfo, sess:req.session})
 
 } )
