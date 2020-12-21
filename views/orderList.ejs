@@ -55,8 +55,8 @@
                         <%= myPageInfo.orderData[i].order_state%>
                     </td>
                     <td>
-                        <% if (false) { %>
-                        <button class="btn">후기작성</button>
+                        <% if (myPageInfo.orderData[i].order_state == "배송완료") { %>
+                        <button class="btn">후기 작성</button>
                         <% } else { %>
                         <button class="btn" onclick="location.href='/user/order/delete/<%= myPageInfo.orderData[i].order_num%>/<%= myPageInfo.orderData[i].recipe_num%>'">삭제</button>
                         <% } %>
