@@ -87,4 +87,8 @@ router.get('/chefDetail/:user_id', main.chefDetailInfo, (req,res) => {
 router.get('/addAddr', (req, res) => {
   res.render('index.ejs', {pages:'./addAddr'})
 })
+
+router.get('/addReview', (req, res) => {
+  res.render('index.ejs', {pages:'./addReview.ejs'})
+})
 module.exports = router;
