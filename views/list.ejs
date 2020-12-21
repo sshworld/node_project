@@ -3,8 +3,20 @@
 
 <h1>분류</h1>
 
-<% var lineCount = 2 %>
-<% var count = -80 + (40 * lineCount) %>
+<% console.log(cc) %>
+<% if(cc==0) { %>
+    <% var count = -80 + (40 * cc) %>
+<% } else if (cc==1) { %>
+    <% var count = -80 + (40 * cc) %>
+<% } else if (cc==2) { %>
+    <% var count = -80 + (40 * cc) %>
+<% } else if (cc==3) { %>  
+    <% var count = -80 + (40 * cc) %>
+<% } else { %> 
+    <% var count = -80 + (40 * cc) %>
+<% } %>
+
+
 <style>
     .category .lined {
         margin-left: <%=count%>%
