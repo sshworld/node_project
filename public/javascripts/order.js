@@ -25,6 +25,6 @@ function basket(url, count) {
         document.getElementById('order_count').value = 0
     }
     else {
-        location.href = url; //+ document.getElementById('order_count').value;
+        location.href = url + document.getElementById('order_count').value;
     }
 }
