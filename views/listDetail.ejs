@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="/stylesheets/detail.css">
 <script type="text/javascript" src="/javascripts/count.js"></script>
 <script type="text/javascript" src="/javascripts/order.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 <div class="container">
     <div class="view">
@@ -23,7 +24,15 @@
             </div>
 
             <div class="rating">
-                <%=Detail.DetailInfo.recipe_score%>
+                <% var rating = Math.abs(Detail.DetailInfo.recipe_score) %>
+                    <% for(var j = 0; j < 5; j++) { %>
+                        <% if(j < rating) { %>
+                            <i class="material-icons" style="color: orange;">star</i>
+                        <% } else { %>
+                            <i class="material-icons" style="color: #000;">star</i>
+                        <% } %>
+                    <% } %>
+                (<%=Detail.DetailInfo.recipe_score%>)
             </div>
 
             <div class="price-total">
@@ -67,7 +76,15 @@
                 <img src="/images/tomato.png" alt="" class="review-img">
                 <h3><%=Detail.Review[i].user_id%></h3>
                 <span>
-                    <%=Detail.Review[i].review_score%>
+                    <% var rating = Math.abs(Detail.Review[i].review_score) %>
+                    <% for(var j = 0; j < 5; j++) { %>
+                        <% if(j < rating) { %>
+                            <i class="material-icons" style="color: orange;">star</i>
+                        <% } else { %>
+                            <i class="material-icons" style="color: #000;">star</i>
+                        <% } %>
+                    <% } %>
+                    (<%=Detail.Review[i].review_score%>)
                 </span>
                 <p><%=Detail.Review[i].review_date%></p>
             </div>

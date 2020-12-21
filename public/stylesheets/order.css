@@ -11,20 +11,30 @@
 
 /* ------------ 상품 구매 ---------*/
 
+.purchase {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .view {
+    margin-top: 20px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    width: 100%;
+    margin-left: 10%;
+    width: 80%;
     flex-direction: row;
 }
 
 .goods-img {
     width: 50%;
+    display: flex;
+    justify-content: center;
 }
 
 .goods-img img {
-    width: 80%;
+    width: 200px;
 }
 
 .goods-content {

@@ -7,41 +7,44 @@
 <script type="text/javascript" src="/javascripts/orderDetail.js"></script>
 
     <div class="container">
-        <div class="view">
+        <div class="purchase">
             <%for(i = 0; i < recipe.length; i++){%>
-            <div class="goods-img">
-                <img src="/images/tomato.png" alt="">
-            </div>
-
-            <div class="goods-content">
-                <h3>
-                    <p><%=recipe[i].recipe_name%></p>
-                </h3>
-
-               
-
-                <div class="info">
-                    sub info
+            <div class="view" style="border-bottom: 3px solid orangered;">
+                <div class="goods-img">
+                    <img src="/images/tomato.png" alt="">
                 </div>
 
-                <div class="price-box">
-                    <h3><%=recipe[i].recipe_money%></h3>
-                </div>
+                <div class="goods-content">
+                    <h3>
+                        <p><%=recipe[i].recipe_name%></p>
+                    </h3>
 
-                <div class="price-total">
-                    <div class="price-zone">
-                        <h3>수량 : </h3>
-                        <div class="count">
-                            <input type="text" id="order_count" name="amount" value="<%=recipe[i].basket_sum%>" readonly style="outline: none;">
-                        </div>
+                
+
+                    <div class="info">
+                        sub info
                     </div>
-                    <div class="total-price">
-                        금액 : <input type="text" class="price" name="price" value="<%=recipe[i].basket_sum*recipe[i].recipe_money%>" readonly style="outline: none;">
+
+                    <div class="price-box">
+                        <h3><%=recipe[i].recipe_money%>원</h3>
+                    </div>
+
+                    <div class="price-total">
+                        <div class="price-zone">
+                            <h3>수량 : </h3>
+                            <div class="count">
+                                <input type="text" id="order_count" name="amount" value="<%=recipe[i].basket_sum%>" readonly style="outline: none;">
+                            </div>
+                        </div>
+                        <div class="total-price">
+                            금액 : <input type="text" class="price" name="price" value="<%=recipe[i].basket_sum*recipe[i].recipe_money%>원" readonly style="outline: none;">
+                        </div>
                     </div>
                 </div>
             </div>
             <%}%>
-        </div>
+
+       </div>
     </div>
    
 
