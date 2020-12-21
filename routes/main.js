@@ -92,7 +92,16 @@ router.get('/addAddr', (req, res) => {
   res.render('index.ejs', {pages:'./addAddr', sess:req.session})
 })
 
-router.get('/addReview', (req, res) => {
-  res.render('index.ejs', {pages:'./addReview.ejs', })
+
+//리뷰 작성
+router.get('/addReview/:order_num/:recipe_num', main.review, (req, res) => {
+  res.render('index.ejs', {pages:'./addReview.ejs', sess:req.session})
 })
+
+
+//리뷰 작성
+router.post('/addReview/:order_num/:recipe_num', main.addReview, (req, res) => {
+  res.send('<script type="text/javascript">alert("후기가 등록 되었습니다.");location.href="/";</script>');
+})
+
 module.exports = router;

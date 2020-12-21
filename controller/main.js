@@ -256,7 +256,21 @@ class mainController {
 
 
 
+    async review (req, res, next) {
+        const sql = await db(`SELECT * FROM review WHERE order_num  = "${req.params.order_num}" AND recipe_num = "${req.params.recipe_num}"`)
+
+        if (sql == "") {
+            
+            next();
+        } else {
+            
+            res.send('<script type="text/javascript">alert("이미 등록된 후기가 있습니다.");history.back();</script>');
+        }
+    }
+
+
     async addReview (req, res, next) {
+        
         const val = [req.params.order_num, req.params.recipe_num, req.body.review_title, req.body.review_content, moment().format('YYYY-MM-DD'), req.body.review_score, req.session.user_id]
         console.log("에러1");
         const sql = await db(`INSERT INTO review(order_num, recipe_num, review_title, review_content, review_date, review_score, user_id) VALUES (?,?,?,?,?,?,?)`, val)
@@ -264,11 +278,20 @@ class mainController {
         console.log("에러2");
         const selectScore = await db(`SELECT * FROM recipe WHERE recipe_num = "${req.params.recipe_num}"`)
 
-        let val2 = [(Number(selectScore[0].recipe_score) + Number(req.body.review_score))/2]
-        console.log("에러3");
-        const updateScore = await db(`UPDATE recipe SET recipe_score=?`, val2)
+        if (selectScore[0].recipe_score == 0) {
+            console.log("에러3");
+            let val2 = [Number(req.body.review_score)]
+            const updateScore = await db(`UPDATE recipe SET recipe_score=? WHERE recipe_num = "${req.params.recipe_num}"`, val2)
 
-        next();
+            next();
+        }else {
+            let val3 = [(Number(selectScore[0].recipe_score) + Number(req.body.review_score))/2]
+            console.log("에러4");
+            const updateScore2 = await db(`UPDATE recipe SET recipe_score=? WHERE recipe_num = "${req.params.recipe_num}"`, val3)
+    
+            next();
+        }
+       
     }
 
 
