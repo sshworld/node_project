@@ -14,7 +14,7 @@
                
                 <a href="/chefDetail/<%= Info.Info[i].chef_id%>"><h3><%= Info.Info[i].chef_name%></h3></a>
                 <span>
-                    <% var rating = Math.abs(Info.Info[i].score) %>
+                    <% var rating = Math.round(Info.Info[i].score) %>
                     <% for(var j = 0; j < 5; j++) { %>
                         <% if(j < rating) { %>
                             <i class="material-icons" style="color: orange;">star</i>

@@ -18,7 +18,7 @@
                 <p><%=review[i].user_id%></p>
 
                 <span>
-                    <% var rating = Math.abs(review[i].review_score) %>
+                    <% var rating = Math.round(review[i].review_score) %>
                     <% for(var j = 0; j < 5; j++) { %>
                         <% if(j < rating) { %>
                             <i class="material-icons" style="color: orange;">star</i>
