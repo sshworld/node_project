@@ -6,10 +6,8 @@
 <div class="container">
     <% for(var i = 0; i < ranking.length; i++) { %>
         <div class="card">
-            <div class="ranking">
-                <p><%=i+1%></p>
-            </div>
-            <a href="/list/detail/<%=ranking[i].recipe_num%>"><img src="/images/tomato.png" alt="" class="card-image"></a>
+            <p class="ranking"><%=i+1%></p>
+            <a href="/list/detail/<%=ranking[i].recipe_num%>"><img src="/images/productImage/<%=ranking[i].image_path%>" onerror="this.src='/images/tomato.png'" alt="" class="card-image"></a>
 
             <div class="card-content">
                 <p><%=ranking[i].recipe_name%></p>
