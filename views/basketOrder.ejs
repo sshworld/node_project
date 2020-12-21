@@ -1,20 +1,21 @@
 <link rel="stylesheet" href="/stylesheets/order.css">
 
 
-<form action="/user/basketOrder/<%=recipe.recipe_num%>/<%=recipe.basket_sum%>" method="POST">
+<form action="/user/basketOrder/<%=recipe[0].basket_num%>" method="POST">
 
 
 <script type="text/javascript" src="/javascripts/orderDetail.js"></script>
 
     <div class="container">
         <div class="view">
+            <%for(i = 0; i < recipe.length; i++){%>
             <div class="goods-img">
                 <img src="/images/tomato.png" alt="">
             </div>
 
             <div class="goods-content">
                 <h3>
-                    <p><%=recipe.recipe_name%></p>
+                    <p><%=recipe[i].recipe_name%></p>
                 </h3>
 
                
@@ -24,21 +25,22 @@
                 </div>
 
                 <div class="price-box">
-                    <h3><%=recipe.recipe_money%></h3>
+                    <h3><%=recipe[i].recipe_money%></h3>
                 </div>
 
                 <div class="price-total">
                     <div class="price-zone">
                         <h3>수량 : </h3>
                         <div class="count">
-                            <input type="text" id="order_count" name="amount" value="<%=recipe.basket_sum%>" readonly style="outline: none;">
+                            <input type="text" id="order_count" name="amount" value="<%=recipe[i].basket_sum%>" readonly style="outline: none;">
                         </div>
                     </div>
                     <div class="total-price">
-                        금액 : <input type="text" class="price" name="price" value="<%=recipe.basket_sum*recipe.recipe_money%>" readonly style="outline: none;">
+                        금액 : <input type="text" class="price" name="price" value="<%=recipe[i].basket_sum*recipe[i].recipe_money%>" readonly style="outline: none;">
                     </div>
                 </div>
             </div>
+            <%}%>
         </div>
     </div>
    

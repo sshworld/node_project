@@ -29,54 +29,65 @@
             </thead>
 
             <tbody>
-                <% for(var i = 0; i < myPageInfo.basketData.length; i++) { %>
-                <tr>
-                    <td>
-                        <div class="row">
-                            <img src="<%= myPageInfo.basketData[i].image_path%>" alt="" class="gift-img">
-                            <ul>
-                                <li><a href="/list/detail/<%= myPageInfo.basketData[i].recipe_num%>"><%= myPageInfo.basketData[i].chef_name%></a></li>
-                                <li><a href="/list/detail/<%= myPageInfo.basketData[i].recipe_num%>"><%= myPageInfo.basketData[i].recipe_name%></a></li>
-                            </ul>
-                        </div>
-                    </td>
-                    <td>
-                        <% var price = myPageInfo.basketData[i].recipe_money %>
-                        <% if(price > 1000) { %>
-                        <% price = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') %>
-                        <% }%>
-                        <%=price%>원
-                    </td>
-                    <td>
-                        <div class="count">
-                            <input type="number" id="order_count" value="<%= myPageInfo.basketData[i].basket_sum%>" style="outline: none;" min="zzz1" readonly>
-                            <span>
-                                <button value="증가" onclick="location.href='/user/basket/countUp/<%=myPageInfo.basketData[i].basket_num%>/<%=myPageInfo.basketData[i].recipe_num%>'"></button>
-                                <button value="감소" onclick="location.href='/user/basket/countDown/<%=myPageInfo.basketData[i].basket_num%>/<%=myPageInfo.basketData[i].recipe_num%>'"></button>
-                            </span>
-                        </div>
-                    </td>
-                    <td>
-                        <% var price = myPageInfo.basketData[i].recipe_money * myPageInfo.basketData[i].basket_sum  %>
-                        <% if(price > 1000) { %>
-                        <% price = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') %>
-                        <% }%>
-                        <%=price%>원
-                    </td>
-                    <td>
-                        <button class="btn" onclick="location.href='/user/basket/order/<%=myPageInfo.basketData[i].basket_num%>/<%=myPageInfo.basketData[i].recipe_num%>';">주문하기</button>
-                    </td>
-                    <td>
-                        <button class="btn" onclick="location.href='/user/basket/delete/<%=myPageInfo.basketData[i].basket_num%>/<%=myPageInfo.basketData[i].recipe_num%>'">삭제</button>
-                    </td>
-                </tr>
-                <% } %>
+                <% if(myPageInfo.basketData.length == 0) { %>
+                    <tr>
+                        <td colspan="5">장바구니가 비었습니다.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                <% } else { %>
+                    <% for(var i = 0; i < myPageInfo.basketData.length; i++) { %>
+                    <tr>
+                        <td>
+                            <div class="row">
+                                <img src="<%= myPageInfo.basketData[i].image_path%>" alt="" class="gift-img">
+                                <ul>
+                                    <li><a href="/list/detail/<%= myPageInfo.basketData[i].recipe_num%>"><%= myPageInfo.basketData[i].chef_name%></a></li>
+                                    <li><a href="/list/detail/<%= myPageInfo.basketData[i].recipe_num%>"><%= myPageInfo.basketData[i].recipe_name%></a></li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <% var price = myPageInfo.basketData[i].recipe_money %>
+                            <% if(price > 1000) { %>
+                            <% price = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') %>
+                            <% }%>
+                            <%=price%>원
+                        </td>
+                        <td>
+                            <div class="count">
+                                <input type="number" id="order_count" value="<%= myPageInfo.basketData[i].basket_sum%>" style="outline: none;" min="zzz1" readonly>
+                                <span>
+                                    <button value="증가" onclick="location.href='/user/basket/countUp/<%=myPageInfo.basketData[i].basket_num%>/<%=myPageInfo.basketData[i].recipe_num%>'"></button>
+                                    <button value="감소" onclick="location.href='/user/basket/countDown/<%=myPageInfo.basketData[i].basket_num%>/<%=myPageInfo.basketData[i].recipe_num%>'"></button>
+                                </span>
+                            </div>
+                        </td>
+                        <td>
+                            <% var price = myPageInfo.basketData[i].recipe_money * myPageInfo.basketData[i].basket_sum  %>
+                            <% if(price > 1000) { %>
+                            <% price = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') %>
+                            <% }%>
+                            <%=price%>원
+                        </td>
+                        <td>
+                            <button class="btn" onclick="location.href='/user/basket/order/<%=myPageInfo.basketData[i].basket_num%>/<%=myPageInfo.basketData[i].recipe_num%>';">주문하기</button>
+                        </td>
+                        <td>
+                            <button class="btn" onclick="location.href='/user/basket/delete/<%=myPageInfo.basketData[i].basket_num%>/<%=myPageInfo.basketData[i].recipe_num%>'">삭제</button>
+                        </td>
+                    </tr>
+                    <% } %>
+                
             </tbody>
+            <% } %>
         </table>
-     
+        <% if(myPageInfo.basketData.length != 0) { %>
         <div class="allOrder">
             <button class="btn" onclick="location.href='/user/allOrder/<%=myPageInfo.basketData[0].basket_num%>'">주문하기</button>
         </div>
-     
+        <% } %>
     </div>
 </div>

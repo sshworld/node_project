@@ -253,21 +253,18 @@ class userController {
     // 장바구니 통합 주문 
     async basketOrder(req, res, next) {
         try {     
+            const basket_num = req.params.basket_num
+            let selectBasketInfo = await db("SELECT * FROM basketinfo bi, recipe r WHERE bi.recipe_num = r.recipe_num AND basket_num =?", [basket_num])
             
-            
-            let basketInfo = await db("SELECT * FROM baskets b, basketinfo bi, recipe r WHERE basket_num =? AND recipe_num =? ", [basket_num, recipe_num])
-           
             let cardInfoData = await db("SELECT * From cards WHERE card_num =?", [req.body.card_num]);
             cardInfoData = cardInfoData[0];
-            let recipeInfoData = await db("SELECT * FROM recipe WHERE recipe_num =?", [recipe_num]); 
-            recipeInfoData = recipeInfoData[0];
             let addressInfoData = await db("SELECT * From places WHERE place_num =?", [req.body.place_num]);
             addressInfoData = addressInfoData[0];
-            req.body.recipeInfoData = recipeInfoData
+         
             req.body.cardInfoData = cardInfoData
             req.body.addressInfoData = addressInfoData
-            req.body.basketInfo = basketInfo
-            
+        
+            req.body.selectBasketInfo = selectBasketInfo
     
     
             let error1 = await db("INSERT INTO orders SET ?", {
@@ -283,11 +280,11 @@ class userController {
     
             let order_no = await db("SELECT MAX(order_num) as order_num FROM orders WHERE user_id = ? ", [req.session.user_id]);
             
-            for(var i = 0; i < basketInfo.length; i++) {
+            for(var i = 0; i < selectBasketInfo.length; i++) {
                 await db("INSERT INTO orderinfo SET ? ", {
-                    recipe_num : recipe_num,
+                    recipe_num : req.body.selectBasketInfo[i].recipe_num,
                     order_num : order_no[0].order_num,
-                    order_sum : basketInfo[i].basket_sum,
+                    order_sum : selectBasketInfo[i].basket_sum,
                     
                 })
                
@@ -371,7 +368,7 @@ class userController {
             // req.recipe = recipe[0];
             req.card = card;
             req.place = place;
-            req.selectBasketInfo = selectBasketInfo[0];
+            req.selectBasketInfo = selectBasketInfo;
             req.amount = basketSum;
             req.session.basket = true;
     

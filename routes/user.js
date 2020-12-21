@@ -124,18 +124,24 @@ router.get('/basket/:recipe_num/:order_count', user.createBasket, (req, res) =>{
 router.get('/basket/order/:basket_num/:recipe_num', user.selectRecipe, (req, res) => {
   res.render('index.ejs', { pages: './order.ejs', recipe: req.recipe, card: req.card, place: req.place, amount:req.selectBasketInfo[0].basket_sum, sess:req.session })
 })
+
 //장바구니 통합 주문 
-router.post('/basketOrder', user.basketOrder, (req, res, next) => {
-  res.send('<script type="text/javascript">alert("장바구니 주문이 완료되었습니다.");location.href="/";</script>');
+router.post('/basketOrder/:basket_num', user.basketOrder, (req, res, next) => {
+  res.send('<script type="text/javascript">alert("장바구니 통합 주문이 완료되었습니다.");location.href="/";</script>');
 })
+
 //장바구니 통합페이지로 넘어가기
 router.get('/allOrder/:basket_num', user.allBasket, (req, res) => {
+
   res.render('index.ejs', { pages: './basketOrder.ejs', card: req.card, place: req.place, amount: req.selectBasketInfo , recipe:req.selectBasketInfo, sess:req.session})
+
 } )
+
 // 마이페이지 
 router.get('/mypage', user.myPageInfo, (req, res) => {
   res.render('mypage.ejs', {pageCount : 0 , myPageInfo : req.myPageInfo, sess:req.session})
 })
+
 // 장바구니 조회
 router.get('/basketList', user.myBasketInfo, (req, res) => {
   res.render('mypage.ejs', {pageCount : 2 , myPageInfo : req.myPageInfo, sess:req.session})
