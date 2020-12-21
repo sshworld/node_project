@@ -4,7 +4,7 @@ const cancleBtn = document.querySelector(".cancle-btn");
 const customBtn = document.querySelector("#custom-btn");
 let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
 
-let count = 1
+let count = 2
 
 let inCount = 2
 
@@ -60,7 +60,7 @@ function stepPlus() {
     <button type="button" onclick="defaultBtnActive(` + count + `)" id="custom-btn">Choose a file</button>
     <div class="wrapper" style="width: 430px;">
         <input type="text" name="step" required="required">
-        <label for="">Step` + count + `</label>
+        <label for="">Step` + (count-1) + `</label>
     </div>
 </div>`
 
