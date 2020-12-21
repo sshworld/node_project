@@ -18,11 +18,14 @@
                 <p><%=review[i].user_id%></p>
 
                 <span>
-                    <i class="material-icons" style="color: orange;">star</i>
-                    <i class="material-icons" style="color: orange;">star</i>
-                    <i class="material-icons" style="color: orange;">star</i>
-                    <i class="material-icons" style="color: orange;">star</i>
-                    <i class="material-icons" style="color: orange;">star</i>
+                    <% var rating = Math.abs(review[i].review_score) %>
+                    <% for(var j = 0; j < 5; j++) { %>
+                        <% if(j < rating) { %>
+                            <i class="material-icons" style="color: orange;">star</i>
+                        <% } else { %>
+                            <i class="material-icons" style="color: #000;">star</i>
+                        <% } %>
+                    <% } %>
                     <p>(<%=review[i].review_score%>)</p>
                 </span>
             </div>
