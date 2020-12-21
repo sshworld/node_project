@@ -1,12 +1,12 @@
 <div class="box">
     <div class="section-title">
         <h1>배송지 내역</h1>
-        <a href=#>추가</a>
+        <a href=/user/addAddr>추가</a>
     </div>
     <% for(i = 0; i < myPageInfo.readAddrData.length ; i++) { %>
         
     <div class="box-content">
-        <a href="#">삭제</a>
+        <a href="/user/deletePlace/<%= myPageInfo.readAddrData[i].place_id%>">삭제</a>
         <div class="detail">
             <label for="">우편번호 : </label>
             <input type="text" id="card_num" name="card_num" value="<%= myPageInfo.readAddrData[i].place_num%>" readonly required="required">

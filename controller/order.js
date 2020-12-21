@@ -1,15 +1,19 @@
 const { NetworkAuthenticationRequire } = require("http-errors");
+
 const db = require("../middleware/db");
 const moment = require("moment");
+
 
 class orderController {
     //주문 페이지
     async selectRecipe(req, res, next) {
         if (req.session.user_id) {
             console.log("에러1");
+
             const recipe = await db(
                 `SELECT * FROM recipe as r, image as i WHERE r.recipe_num = "${req.params.recipe_num}" AND i.image_seq = 1 AND r.recipe_num = i.recipe_num`
             );
+
             console.log("에러2");
             const card = await db(
                 `SELECT * FROM cards WHERE user_id = "${req.session.user_id}"`
@@ -40,8 +44,11 @@ class orderController {
         }
     }
 
-    //주문
+
+        
+
     async order(req, res, next) {
+
         console.log("에러1");
         const val = [
             moment().format("YYYY-MM-DD"),
@@ -67,15 +74,18 @@ class orderController {
         );
 
         console.log("에러3");
-        const val2 = [
-            selectNum[0].order_num,
-            req.params.recipe_num,
-            req.body.amount,
-        ];
-        const orderinfo = await db(
-            `INSERT INTO orderinfo VALUES (?,?,?)`,
-            val2
-        );
+
+        const val2 = [selectNum[0].order_num, req.params.recipe_num, req.body.amount]
+        const orderinfo = await db(`INSERT INTO orderinfo VALUES (?,?,?)`, val2)
+
+        if(req.session.basket) {
+            const basketNum = await db("SELECT basket_num FROM baskets WHERE user_id =?", [req.session.user_id])
+
+            await db("DELETE FROM basketinfo WHERE recipe_num =? AND basket_num=?", [req.params.recipe_num, basketNum[0].basket_num])
+
+            req.session.basket = false;
+        }
+        
 
         next();
     }

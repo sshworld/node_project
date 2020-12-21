@@ -74,7 +74,7 @@ router.post('/product', productImage.send, main.insertProduct, (req, res, next) 
 
 
 // 쉐프 페이지 - 쉐프정보 불러오기
-router.get('/chef', main.chefInfo, (req, res, next) => {  
+router.get('/chef', main.chefInfo, (req, res) => {  
   res.render('index.ejs', {pages:'./chef.ejs', Info:req.Info})
 })
 
