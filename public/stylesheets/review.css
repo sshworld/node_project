@@ -24,14 +24,14 @@ h1 {
   
   .card-image {
     width: 100%;
-    height: 60%;
+    height: 70%;
     display: block;
   }
   
   .card-content {
     line-height: 1.5;
     font-size: 0.9em;
-    height: 20%;
+    height: 10%;
     padding: 15px;
     background: #fafafa;
   }
