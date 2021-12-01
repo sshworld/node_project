@@ -12,9 +12,9 @@
         "database" : "mydb"
     },
     "Choi" : {
-        "host" : "192.168.96.23",
+        "host" : "",
         "user" : "root",
-        "password" : "Gudans29810!",
+        "password" : "",
         "database" : "mydb"
     },
     "SongLabtop" : {
